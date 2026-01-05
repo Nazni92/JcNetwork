@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JC Mobile & Gadget - IPTV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #ffffff;
+        }
+
+        /* Banner */
+        .banner img {
+            width: 100%;
+            max-height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        header h1 {
+            color: gold;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #ccc;
+        }
+
+        .apps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .app-card {
+            background: #111;
+            border: 1px solid gold;
+            border-radius: 10px;
+            width: 300px;
+            padding: 20px;
+        }
+
+        .app-card h2 {
+            color: gold;
+            text-align: center;
+        }
+
+        .app-card h4 {
+            color: #ffcc00;
+            margin-bottom: 5px;
+        }
+
+        .app-card a {
+            display: block;
+            margin: 8px 0;
+            background: gold;
+            color: #000;
+            text-align: center;
+            padding: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .app-card ul {
+            padding-left: 18px;
+        }
+
+        .note {
+            color: red;
+            font-size: 14px;
+            text-align: center;
+        }
+
+        .payment {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .payment h2 {
+            color: gold;
+        }
+
+        .payment img {
+            max-width: 260px;
+            border: 3px solid gold;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        .pay-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 14px 30px;
+            background: gold;
+            color: #000;
+            font-weight: bold;
+            border-radius: 30px;
+            text-decoration: none;
+        }
+
+        footer {
+            background: #000;
+            text-align: center;
+            padding: 15px;
+            color: #ccc;
+        }
+
+        /* Floating WhatsApp */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: gold;
+            color: #000;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 28px;
+            box-shadow: 0 0 15px gold;
+            text-decoration: none;
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Banner -->
+<div class="banner">
+    <img src="banner4.png" alt="JC Mobile & Network IPTV">
+</div>
+
+<header>
+    <h1>JC Mobile & Gadget</h1>
+    <p>Unlimited Live Channels | Movies & Series</p>
+</header>
+
+<section class="apps">
+
+    <!-- KING TV -->
+    <div class="app-card">
+        <h2>KING TV</h2>
+        <a href="http://cutt.ly/king100" target="_blank">Download App</a>
+        <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" target="_blank">Support Group</a>
+        <ul>
+            <li>1 Bulan – RM15</li>
+            <li>3 Bulan – RM38</li>
+            <li>6 Bulan – RM70</li>
+            <li>1 Tahun – RM110</li>
+            <li>Lifetime – RM290</li>
+        </ul>
+    </div>
+
+    <!-- PANDAFLIX -->
+    <div class="app-card">
+        <h2>PANDAFLIX</h2>
+        <a href="https://link2u.cc/tvtech" target="_blank">Download App</a>
+        <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" target="_blank">Support Group</a>
+        <ul>
+            <li>600+ Channels</li>
+            <li>19K+ Movies & Series</li>
+            <li>1 Bulan – RM10</li>
+            <li>3 Bulan – RM28</li>
+            <li>6 Bulan – RM55</li>
+            <li>1 Tahun – RM100</li>
+        </ul>
+        <p class="note">❌ 1 ID = 1 Device</p>
+    </div>
+
+    <!-- TVTECH PRO -->
+    <div class="app-card">
+        <h2>TVTECH PRO</h2>
+        <a href="https://link2u.cc/tvtech" target="_blank">Download App</a>
+        <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR" target="_blank">Support Group</a>
+
+        <h4>1 Device</h4>
+        <ul>
+            <li>1 Bulan – RM12</li>
+            <li>3 Bulan – RM35</li>
+            <li>6 Bulan – RM60</li>
+            <li>1 Tahun – RM110</li>
+        </ul>
+
+        <h4>2 Devices</h4>
+        <ul>
+            <li>1 Bulan – RM20</li>
+            <li>3 Bulan – RM55</li>
+            <li>6 Bulan – RM105</li>
+            <li>1 Tahun – RM200</li>
+        </ul>
+    </div>
+
+</section>
+
+<!-- Payment -->
+<section class="payment">
+    <h2>Online Payment</h2>
+    <img src="qr.jpg" alt="Maybank QR Code">
+
+    <br>
+    <a class="pay-btn"
+       href="https://wa.me/60179290815?text=Hi%20JC%20Mobile%20%26%20Gadget%20👋%0ASaya%20berminat%20untuk%20langgan%20IPTV.%0ASila%20info%20pakej%20%26%20harga.%20Terima%20kasih."
+       target="_blank">
+       Pay via WhatsApp
+    </a>
+</section>
+
+<footer>
+    Operation Hours: Daily 9.00 AM – 11.00 PM
+</footer>
+
+<!-- Floating WhatsApp -->
+<a class="floating-whatsapp"
+   href="https://wa.me/60179290815?text=Hi%20JC%20Mobile%20%26%20Gadget%20👋%0ASaya%20berminat%20untuk%20langgan%20IPTV.%0ASila%20info%20pakej%20%26%20harga.%20Terima%20kasih."
+   target="_blank">
+   💬
+</a>
+
+</body>
+</html>
