@@ -77,6 +77,19 @@ body {
   transition: all 0.3s ease;
 }
 
+/* 🔴 VIEW PACKAGE BUTTON (Dark Red / Black) */
+button.btn {
+  background: linear-gradient(135deg, #8b0000, #1a0000);
+  color: #fff;
+  border: 1px solid rgba(255,80,80,0.4);
+}
+
+button.btn:hover {
+  background: linear-gradient(135deg, #b30000, #2a0000);
+  box-shadow: 0 10px 25px rgba(180,0,0,0.6);
+  transform: scale(1.05);
+}
+
 .btn:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(212,175,55,0.5);
@@ -222,11 +235,12 @@ footer {
   box-shadow: 0 8px 20px rgba(37,211,102,0.6);
 }
 
+/* 🔵 TELEGRAM FLOATING BUTTON */
 .floating-telegram {
   bottom: 90px;
-  background: linear-gradient(135deg, #d4af37, #f5d76e);
-  color: #000;
-  box-shadow: 0 8px 20px rgba(212,175,55,0.6);
+  background: linear-gradient(135deg, #229ED9, #1c88c7);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(34,158,217,0.6);
 }
 
 .floating-whatsapp:hover,
