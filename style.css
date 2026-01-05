@@ -1,4 +1,3 @@
-
 /* ================= RESET ================= */
 * {
   margin: 0;
@@ -8,8 +7,8 @@
 }
 
 body {
-  background: #0b0b0b;
-  color: #ffffff;
+  background: radial-gradient(circle at top, #111 0%, #000 60%);
+  color: #fff;
   line-height: 1.6;
 }
 
@@ -19,37 +18,53 @@ body {
   max-height: 320px;
   object-fit: cover;
   border-bottom: 3px solid #d4af37;
+  box-shadow: 0 10px 40px rgba(212,175,55,0.35);
 }
 
 /* ================= CONTAINER ================= */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-  padding: 40px 20px;
+  gap: 30px;
+  padding: 60px 20px;
   max-width: 1200px;
   margin: auto;
 }
 
 /* ================= APP CARD ================= */
 .app-card {
-  background: linear-gradient(180deg, #111, #000);
-  border-radius: 16px;
-  padding: 25px;
+  background: linear-gradient(180deg, #121212, #050505);
+  border-radius: 18px;
+  padding: 28px;
   text-align: center;
   border: 1px solid rgba(212,175,55,0.25);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-  transition: all 0.3s ease;
+  box-shadow: 0 25px 45px rgba(0,0,0,0.85);
+  transition: all 0.35s ease;
+  position: relative;
+}
+
+.app-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  background: linear-gradient(120deg, transparent, rgba(212,175,55,0.15), transparent);
+  opacity: 0;
+  transition: opacity .4s;
+}
+
+.app-card:hover::before {
+  opacity: 1;
 }
 
 .app-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 25px 45px rgba(212,175,55,0.35);
+  transform: translateY(-10px);
+  box-shadow: 0 35px 65px rgba(212,175,55,0.45);
 }
 
 .app-card img {
   width: 90px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .app-card h2 {
@@ -59,43 +74,58 @@ body {
 
 .app-card p {
   font-size: 14px;
-  opacity: 0.85;
-  margin-bottom: 18px;
+  opacity: .85;
+  margin-bottom: 20px;
+}
+
+/* ================= PANDAFLIX RED GLASS ================= */
+.app-card.pandaflix {
+  background: linear-gradient(
+    180deg,
+    rgba(120,0,0,0.35),
+    rgba(40,0,0,0.85)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,50,50,0.4);
+  box-shadow: 0 30px 70px rgba(255,0,0,0.45);
+}
+
+.app-card.pandaflix h2 {
+  color: #ff4b4b;
 }
 
 /* ================= BUTTONS ================= */
 .btn {
   display: inline-block;
-  padding: 10px 18px;
+  padding: 11px 22px;
   margin: 6px 0;
-  border-radius: 25px;
+  border-radius: 30px;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  background: linear-gradient(135deg, #d4af37, #f5d76e);
-  color: #000;
   font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-/* 🔴 VIEW PACKAGE BUTTON (Dark Red / Black) */
-button.btn {
-  background: linear-gradient(135deg, #8b0000, #1a0000);
-  color: #fff;
-  border: 1px solid rgba(255,80,80,0.4);
-}
-
-button.btn:hover {
-  background: linear-gradient(135deg, #b30000, #2a0000);
-  box-shadow: 0 10px 25px rgba(180,0,0,0.6);
-  transform: scale(1.05);
+  background: linear-gradient(135deg, #d4af37, #f7e27a);
+  color: #000;
+  transition: all .3s ease;
 }
 
 .btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(212,175,55,0.5);
+  transform: scale(1.06);
+  box-shadow: 0 10px 25px rgba(212,175,55,0.6);
 }
 
+/* DARK RED PACKAGE BUTTON */
+.btn.darkred {
+  background: linear-gradient(135deg, #7a0000, #c30000);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(255,0,0,0.5);
+}
+
+.btn.darkred:hover {
+  box-shadow: 0 12px 35px rgba(255,0,0,0.8);
+}
+
+/* OUTLINE */
 .btn.outline {
   background: transparent;
   border: 1px solid #d4af37;
@@ -107,100 +137,88 @@ button.btn:hover {
   color: #000;
 }
 
+/* SMALL */
 .btn.small {
   padding: 6px 14px;
   font-size: 13px;
-  margin-left: 10px;
 }
 
-/* ================= BIG PAYMENT ================= */
+/* ================= PAYMENT ================= */
 .payment {
-  padding: 60px 20px;
+  padding: 70px 20px;
   text-align: center;
-  background: radial-gradient(circle at top, #111, #000);
-  border-top: 1px solid rgba(212,175,55,0.15);
+  background: linear-gradient(180deg, #080808, #000);
+  border-top: 1px solid rgba(212,175,55,0.2);
 }
 
 .payment h2 {
-  font-size: 28px;
+  font-size: 30px;
   color: #d4af37;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
 }
 
 .payment-box {
   display: flex;
-  gap: 25px;
+  gap: 30px;
   justify-content: center;
   flex-wrap: wrap;
-  max-width: 900px;
-  margin: auto;
 }
 
+/* BIG PAYMENT BUTTONS */
 .payment-btn {
-  flex: 1;
-  min-width: 260px;
-  max-width: 380px;
-  padding: 28px;
-  border-radius: 18px;
-  font-size: 20px;
+  min-width: 280px;
+  max-width: 400px;
+  padding: 32px;
+  border-radius: 20px;
+  font-size: 22px;
   font-weight: 700;
   text-decoration: none;
-  cursor: pointer;
   border: none;
-  transition: all 0.3s ease;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  transition: all .35s ease;
 }
 
 .payment-btn span {
   font-size: 14px;
-  font-weight: 400;
   margin-top: 8px;
-  opacity: 0.85;
+  opacity: .85;
 }
 
-/* WhatsApp Payment */
+/* WhatsApp */
 .payment-btn.whatsapp {
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color: #ffffff;
-  box-shadow: 0 15px 35px rgba(37,211,102,0.45);
+  background: linear-gradient(135deg, #25d366, #1fb85a);
+  color: #fff;
+  box-shadow: 0 25px 50px rgba(37,211,102,.6);
 }
 
 .payment-btn.whatsapp:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 45px rgba(37,211,102,0.7);
+  transform: translateY(-8px);
+  box-shadow: 0 35px 70px rgba(37,211,102,.85);
 }
 
-/* QR Payment */
+/* QR */
 .payment-btn.qr {
-  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  background: linear-gradient(135deg, #d4af37, #f7e27a);
   color: #000;
-  box-shadow: 0 15px 35px rgba(212,175,55,0.55);
+  box-shadow: 0 25px 50px rgba(212,175,55,.7);
 }
 
 .payment-btn.qr:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 25px 45px rgba(212,175,55,0.75);
+  transform: translateY(-8px);
+  box-shadow: 0 35px 70px rgba(212,175,55,.9);
 }
 
-/* ================= RESELLER & HOURS ================= */
-.reseller, .hours {
+/* ================= HOURS ================= */
+.hours {
   text-align: center;
   padding: 40px 20px;
-  border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.reseller h2,
 .hours h2 {
   color: #d4af37;
-  margin-bottom: 10px;
-}
-
-.reseller p {
-  opacity: 0.85;
-  margin-bottom: 15px;
 }
 
 /* ================= FOOTER ================= */
@@ -208,45 +226,46 @@ footer {
   text-align: center;
   padding: 20px;
   background: #000;
+  border-top: 1px solid rgba(212,175,55,0.25);
   font-size: 14px;
-  border-top: 1px solid rgba(212,175,55,0.2);
 }
 
-/* ================= FLOATING BUTTONS ================= */
+/* ================= FLOATING ================= */
 .floating-whatsapp,
 .floating-telegram {
   position: fixed;
   right: 20px;
-  width: 55px;
-  height: 55px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 26px;
-  text-decoration: none;
   z-index: 999;
-  transition: transform 0.3s ease;
+  transition: transform .3s ease;
 }
 
 .floating-whatsapp {
   bottom: 20px;
-  background: #25D366;
+  background: #25d366;
   color: #fff;
-  box-shadow: 0 8px 20px rgba(37,211,102,0.6);
+  font-size: 26px;
+  box-shadow: 0 10px 25px rgba(37,211,102,.7);
 }
 
-/* 🔵 TELEGRAM FLOATING BUTTON */
 .floating-telegram {
   bottom: 90px;
-  background: linear-gradient(135deg, #229ED9, #1c88c7);
-  color: #ffffff;
-  box-shadow: 0 8px 20px rgba(34,158,217,0.6);
+  background: linear-gradient(135deg, #0088cc, #00aaff);
+  box-shadow: 0 10px 25px rgba(0,136,204,.7);
+}
+
+.floating-telegram img {
+  width: 28px;
 }
 
 .floating-whatsapp:hover,
 .floating-telegram:hover {
-  transform: scale(1.12);
+  transform: scale(1.15);
 }
 
 /* ================= MODAL ================= */
@@ -254,7 +273,7 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,.85);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -263,27 +282,26 @@ footer {
 .modal-box {
   background: linear-gradient(180deg, #111, #000);
   padding: 30px;
-  border-radius: 16px;
-  width: 90%;
+  border-radius: 18px;
   max-width: 420px;
+  width: 90%;
   border: 1px solid rgba(212,175,55,0.3);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.85);
+  box-shadow: 0 30px 60px rgba(0,0,0,.9);
 }
 
 .modal-box h2 {
   color: #d4af37;
-  margin-bottom: 15px;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .modal-box ul {
   list-style: none;
-  margin-bottom: 20px;
 }
 
 .modal-box li {
   padding: 10px 0;
-  border-bottom: 1px dashed rgba(255,255,255,0.15);
+  border-bottom: 1px dashed rgba(255,255,255,.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -291,22 +309,12 @@ footer {
 
 .qr-img {
   width: 220px;
-  display: block;
   margin: 20px auto;
+  display: block;
 }
 
 /* ================= RESPONSIVE ================= */
-@media (max-width: 600px) {
-  .btn {
-    width: 100%;
-  }
-
-  .btn.small {
-    width: auto;
-  }
-
-  .payment-btn {
-    font-size: 18px;
-    padding: 22px;
-  }
+@media (max-width:600px) {
+  .btn { width: 100%; }
+  .payment-btn { font-size: 18px; }
 }
