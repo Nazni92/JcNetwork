@@ -6,7 +6,7 @@
 :root {
   --gold: #d4af37;
   --gold-light: #f5d76e;
-  --gold-glow: rgba(212,175,55,0.65);
+  --gold-glow: rgba(212,175,55,0.6);
 }
 
 /* ================= RESET ================= */
@@ -26,6 +26,7 @@ body {
   background: radial-gradient(circle at top, #111, #000);
   color: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* ================= BANNER ================= */
@@ -39,37 +40,37 @@ body {
 .container {
   max-width: 1200px;
   margin: auto;
-  padding: 50px 20px;
+  padding: 60px 20px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+  gap: 30px;
 }
 
 /* ================= APP CARD ================= */
 .app-card {
-  background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.98));
-  border-radius: 20px;
-  padding: 28px;
+  background: linear-gradient(180deg, rgba(22,22,22,0.96), rgba(0,0,0,0.98));
+  border-radius: 22px;
+  padding: 30px;
   text-align: center;
-  border: 1px solid rgba(212,175,55,0.35);
-  box-shadow: 0 0 30px rgba(212,175,55,0.2);
-  transition: 0.35s ease;
+  border: 1px solid rgba(212,175,55,0.28);
+  box-shadow: 0 0 26px rgba(212,175,55,0.18);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .app-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 45px rgba(212,175,55,0.6);
+  box-shadow: 0 0 42px rgba(212,175,55,0.55);
 }
 
 .app-card img {
   width: 90px;
-  margin-bottom: 15px;
-  filter: drop-shadow(0 0 12px var(--gold-glow));
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 10px var(--gold-glow));
 }
 
 .app-card h2 {
   color: var(--gold);
-  text-shadow: 0 0 12px var(--gold-glow);
+  text-shadow: 0 0 10px var(--gold-glow);
   margin-bottom: 8px;
 }
 
@@ -82,7 +83,7 @@ body {
 /* ================= BUTTONS ================= */
 .btn {
   display: inline-block;
-  padding: 12px 22px;
+  padding: 12px 24px;
   border-radius: 30px;
   border: none;
   cursor: pointer;
@@ -91,7 +92,7 @@ body {
   font-weight: 700;
   transition: 0.3s;
   box-shadow:
-    0 0 18px var(--gold-glow),
+    0 0 16px var(--gold-glow),
     inset 0 0 10px rgba(255,255,255,0.25);
 }
 
@@ -103,10 +104,10 @@ body {
 button.btn {
   background: linear-gradient(135deg, #700000, #140000);
   color: #fff;
-  border: 1px solid rgba(255,80,80,0.5);
+  border: 1px solid rgba(255,80,80,0.45);
   box-shadow:
-    0 0 25px rgba(255,0,0,0.7),
-    inset 0 0 12px rgba(255,80,80,0.3);
+    0 0 22px rgba(255,0,0,0.6),
+    inset 0 0 10px rgba(255,80,80,0.25);
 }
 
 /* OUTLINE */
@@ -123,40 +124,35 @@ button.btn {
 
 /* ================= PAYMENT ================= */
 .payment {
-  padding: 70px 20px;
+  padding: 80px 20px;
   text-align: center;
-  background: linear-gradient(180deg, #0d0d0d, #000);
-  border-top: 1px solid rgba(212,175,55,0.25);
+  background: linear-gradient(180deg, #0e0e0e, #000);
 }
 
 .payment h2 {
   font-size: 22px;
   color: var(--gold);
-  margin-bottom: 25px;
+  margin-bottom: 30px;
   text-shadow: 0 0 12px var(--gold-glow);
 }
 
 .payment-box {
   display: flex;
   justify-content: center;
-  gap: 26px;
+  gap: 28px;
   flex-wrap: wrap;
 }
 
-/* PAYMENT BUTTON */
 .payment-btn {
   width: 300px;
-  padding: 22px;
-  border-radius: 20px;
+  padding: 24px;
+  border-radius: 22px;
   font-size: 18px;
   font-weight: 800;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: 0.35s;
-  box-shadow:
-    0 0 25px rgba(212,175,55,0.55),
-    inset 0 0 12px rgba(255,255,255,0.15);
 }
 
 .payment-btn span {
@@ -165,23 +161,22 @@ button.btn {
   opacity: 0.9;
 }
 
-/* PAYMENT NEON COLORS */
 .payment-btn.toyyibpay {
   background: linear-gradient(135deg, #700000, #140000);
   color: #fff;
-  box-shadow: 0 0 35px rgba(255,0,0,0.85);
+  box-shadow: 0 0 32px rgba(255,0,0,0.75);
 }
 
 .payment-btn.whatsapp {
   background: linear-gradient(135deg, #25D366, #1ebe5d);
   color: #fff;
-  box-shadow: 0 0 35px rgba(37,211,102,0.9);
+  box-shadow: 0 0 32px rgba(37,211,102,0.85);
 }
 
 .payment-btn.qr {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   color: #000;
-  box-shadow: 0 0 35px var(--gold-glow);
+  box-shadow: 0 0 32px var(--gold-glow);
 }
 
 .payment-btn:hover {
@@ -190,10 +185,9 @@ button.btn {
 
 /* ================= CUSTOMER REVIEWS ================= */
 .reviews {
-  padding: 70px 20px;
+  padding: 80px 20px;
   text-align: center;
   background: linear-gradient(180deg, #0d0d0d, #000);
-  border-top: 1px solid rgba(212,175,55,0.25);
 }
 
 .reviews h2 {
@@ -206,7 +200,7 @@ button.btn {
 .review-sub {
   font-size: 15px;
   opacity: 0.85;
-  margin-bottom: 35px;
+  margin-bottom: 40px;
 }
 
 .review-box {
@@ -214,21 +208,21 @@ button.btn {
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+  gap: 26px;
 }
 
 .review-card {
-  background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.98));
-  border-radius: 18px;
-  padding: 22px;
-  border: 1px solid rgba(212,175,55,0.35);
-  box-shadow: 0 0 25px rgba(212,175,55,0.25);
+  background: linear-gradient(180deg, rgba(22,22,22,0.96), rgba(0,0,0,0.98));
+  border-radius: 20px;
+  padding: 24px;
+  border: 1px solid rgba(212,175,55,0.28);
+  box-shadow: 0 0 22px rgba(212,175,55,0.22);
   transition: 0.35s ease;
 }
 
 .review-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 0 40px rgba(212,175,55,0.55);
+  box-shadow: 0 0 38px rgba(212,175,55,0.5);
 }
 
 .review-text {
@@ -248,9 +242,8 @@ button.btn {
 .reseller,
 .hours {
   text-align: center;
-  padding: 55px 20px;
+  padding: 65px 20px;
   background: linear-gradient(180deg, #0b0b0b, #000);
-  border-top: 1px solid rgba(212,175,55,0.25);
 }
 
 .reseller h2,
@@ -270,10 +263,10 @@ button.btn {
 /* ================= FOOTER ================= */
 footer {
   background: #000;
-  padding: 20px;
+  padding: 22px;
   text-align: center;
   font-size: 14px;
-  border-top: 1px solid rgba(212,175,55,0.25);
+  opacity: 0.85;
 }
 
 /* ================= MODAL ================= */
@@ -281,7 +274,7 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.92);
   justify-content: center;
   align-items: center;
   z-index: 1000;
@@ -290,13 +283,13 @@ footer {
 
 .modal-box {
   background: linear-gradient(180deg, #141414, #000);
-  padding: 24px;
-  border-radius: 18px;
+  padding: 26px;
+  border-radius: 20px;
   width: 100%;
   max-width: 420px;
   max-height: 85vh;
   overflow-y: auto;
-  border: 1px solid rgba(212,175,55,0.35);
+  border: 1px solid rgba(212,175,55,0.28);
 }
 
 .modal-box h2 {
@@ -311,8 +304,8 @@ footer {
 
 #priceList li {
   background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(212,175,55,0.25);
-  border-radius: 12px;
+  border: 1px solid rgba(212,175,55,0.22);
+  border-radius: 14px;
   padding: 12px 14px;
   margin-bottom: 10px;
   display: flex;
@@ -350,13 +343,13 @@ footer {
 .floating-whatsapp {
   bottom: 20px;
   background: #25D366;
-  box-shadow: 0 0 25px rgba(37,211,102,0.9);
+  box-shadow: 0 0 24px rgba(37,211,102,0.85);
 }
 
 .floating-telegram {
   bottom: 90px;
   background: linear-gradient(135deg, #229ED9, #1c88c7);
-  box-shadow: 0 0 25px rgba(34,158,217,0.9);
+  box-shadow: 0 0 24px rgba(34,158,217,0.85);
 }
 
 /* ================= MOBILE ================= */
