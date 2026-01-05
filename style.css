@@ -7,18 +7,18 @@
 }
 
 body {
-  background: radial-gradient(circle at top, #111 0%, #000 60%);
+  background: radial-gradient(circle at top, #111 0%, #000 65%);
   color: #ffffff;
   line-height: 1.6;
 }
 
-/* ================= GOLD VARIABLES ================= */
+/* ================= VARIABLES ================= */
 :root {
   --gold: #d4af37;
   --gold-soft: #f5d76e;
   --red: #b30000;
   --red-dark: #3a0000;
-  --neon-red: rgba(180,0,0,0.8);
+  --neon-red: rgba(255,40,40,0.8);
 }
 
 /* ================= BANNER ================= */
@@ -40,7 +40,7 @@ body {
   margin: auto;
 }
 
-/* ================= APP CARD ================= */
+/* ================= APP CARD (DEFAULT) ================= */
 .app-card {
   background: linear-gradient(180deg, #0f0f0f, #000);
   border-radius: 18px;
@@ -84,13 +84,58 @@ body {
 .app-card h2 {
   color: var(--gold);
   margin-bottom: 6px;
-  letter-spacing: 0.5px;
 }
 
 .app-card p {
   font-size: 14px;
   opacity: 0.85;
   margin-bottom: 20px;
+}
+
+/* ================= PANDAFLIX RED GLASS ================= */
+.pandaflix-red {
+  background:
+    linear-gradient(180deg, rgba(120,0,0,0.65), rgba(15,0,0,0.95)),
+    radial-gradient(circle at top, rgba(255,60,60,0.35), transparent 60%);
+  border: 1px solid rgba(255,80,80,0.45);
+  box-shadow:
+    inset 0 0 30px rgba(255,0,0,0.3),
+    0 25px 65px rgba(180,0,0,0.65),
+    0 0 50px rgba(255,40,40,0.45);
+  backdrop-filter: blur(10px);
+}
+
+.pandaflix-red::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,120,120,0.3),
+    transparent
+  );
+  opacity: 1;
+}
+
+.pandaflix-red:hover {
+  transform: translateY(-14px) scale(1.04);
+  box-shadow:
+    0 40px 90px rgba(255,0,0,0.85),
+    0 0 70px rgba(255,60,60,0.9);
+}
+
+.pandaflix-red h2 {
+  color: #ff3b3b;
+  text-shadow:
+    0 0 12px rgba(255,60,60,0.9),
+    0 0 25px rgba(255,0,0,0.7);
+}
+
+.pandaflix-red img {
+  filter:
+    drop-shadow(0 0 15px rgba(255,60,60,1))
+    drop-shadow(0 0 30px rgba(180,0,0,0.8));
 }
 
 /* ================= BUTTONS ================= */
@@ -113,19 +158,19 @@ body {
   box-shadow: 0 10px 30px rgba(212,175,55,0.6);
 }
 
-/* 🔴 VIEW PACKAGE – NEON RED */
+/* 🔴 VIEW PACKAGE BUTTON */
 button.btn {
   background: linear-gradient(135deg, var(--red), var(--red-dark));
   color: #fff;
   border: 1px solid rgba(255,80,80,0.4);
-  box-shadow: 0 0 20px rgba(180,0,0,0.35);
+  box-shadow: 0 0 20px rgba(180,0,0,0.45);
 }
 
 button.btn:hover {
   background: linear-gradient(135deg, #ff1a1a, #520000);
   box-shadow:
-    0 0 25px var(--neon-red),
-    0 0 45px rgba(180,0,0,0.6);
+    0 0 30px var(--neon-red),
+    0 0 55px rgba(255,0,0,0.8);
 }
 
 .btn.outline {
@@ -145,12 +190,11 @@ button.btn:hover {
   margin-left: 10px;
 }
 
-/* ================= PAYMENT (BIG & PREMIUM) ================= */
+/* ================= PAYMENT ================= */
 .payment {
   padding: 70px 20px;
   text-align: center;
-  background:
-    radial-gradient(circle at top, #111, #000);
+  background: radial-gradient(circle at top, #111, #000);
   border-top: 1px solid rgba(212,175,55,0.15);
 }
 
@@ -190,141 +234,9 @@ button.btn:hover {
 
 .payment-btn span {
   font-size: 14px;
-  font-weight: 400;
   margin-top: 10px;
   opacity: 0.85;
 }
 
-/* WhatsApp */
 .payment-btn.whatsapp {
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color: #ffffff;
-  box-shadow: 0 0 35px rgba(37,211,102,0.6);
-}
-
-.payment-btn.whatsapp:hover {
-  transform: translateY(-8px) scale(1.03);
-}
-
-/* QR */
-.payment-btn.qr {
-  background: linear-gradient(135deg, var(--gold), var(--gold-soft));
-  color: #000;
-  box-shadow: 0 0 35px rgba(212,175,55,0.7);
-}
-
-.payment-btn.qr:hover {
-  transform: translateY(-8px) scale(1.03);
-}
-
-/* ================= FOOTER SECTIONS ================= */
-.reseller, .hours {
-  text-align: center;
-  padding: 45px 20px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.reseller h2,
-.hours h2 {
-  color: var(--gold);
-  margin-bottom: 10px;
-}
-
-footer {
-  text-align: center;
-  padding: 22px;
-  background: #000;
-  font-size: 14px;
-  border-top: 1px solid rgba(212,175,55,0.2);
-}
-
-/* ================= FLOATING BUTTONS ================= */
-.floating-whatsapp,
-.floating-telegram {
-  position: fixed;
-  right: 22px;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  text-decoration: none;
-  z-index: 999;
-  transition: all 0.3s ease;
-}
-
-.floating-whatsapp {
-  bottom: 20px;
-  background: #25D366;
-  color: #fff;
-  box-shadow: 0 0 25px rgba(37,211,102,0.7);
-}
-
-.floating-telegram {
-  bottom: 95px;
-  background: linear-gradient(135deg, #229ED9, #1c88c7);
-  color: #fff;
-  box-shadow: 0 0 25px rgba(34,158,217,0.7);
-}
-
-.floating-whatsapp:hover,
-.floating-telegram:hover {
-  transform: scale(1.15);
-}
-
-/* ================= MODAL ================= */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.9);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-box {
-  background: linear-gradient(180deg, #111, #000);
-  padding: 32px;
-  border-radius: 18px;
-  width: 90%;
-  max-width: 440px;
-  border: 1px solid rgba(212,175,55,0.35);
-  box-shadow:
-    0 0 40px rgba(212,175,55,0.35),
-    0 0 60px rgba(180,0,0,0.25);
-}
-
-.modal-box h2 {
-  color: var(--gold);
-  margin-bottom: 18px;
-  text-align: center;
-}
-
-.modal-box li {
-  padding: 12px 0;
-  border-bottom: 1px dashed rgba(255,255,255,0.15);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.qr-img {
-  width: 220px;
-  display: block;
-  margin: 20px auto;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 600px) {
-  .btn {
-    width: 100%;
-  }
-
-  .payment-btn {
-    font-size: 18px;
-    padding: 24px;
-  }
-}
+  background: linear-gradient(135deg, #25D366, #1ebe5d
