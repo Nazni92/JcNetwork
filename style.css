@@ -27,29 +27,10 @@ body {
 }
 
 /* ================= BANNER ================= */
-.banner {
-  position: relative;
-  overflow: hidden;
-}
-
 .banner img {
   width: 100%;
   height: 320px;
   object-fit: cover;
-  display: block;
-}
-
-.banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent 25%,
-    rgba(255,255,255,0.18),
-    transparent 70%
-  );
-  pointer-events: none;
 }
 
 /* ================= CONTAINER ================= */
@@ -64,48 +45,37 @@ body {
 
 /* ================= APP CARD ================= */
 .app-card {
-  background: linear-gradient(
-    180deg,
-    rgba(20,20,20,0.9),
-    rgba(0,0,0,0.95)
-  );
+  background: linear-gradient(180deg, rgba(20,20,20,0.9), rgba(0,0,0,0.95));
   border-radius: 20px;
   padding: 28px;
   text-align: center;
   border: 1px solid rgba(212,175,55,0.35);
   backdrop-filter: blur(14px);
-  box-shadow:
-    0 0 30px rgba(212,175,55,0.15),
-    inset 0 0 20px rgba(212,175,55,0.05);
-  transition: all 0.35s ease;
+  box-shadow: 0 0 30px rgba(212,175,55,0.15);
+  transition: 0.35s;
 }
 
 .app-card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow:
-    0 0 45px rgba(212,175,55,0.6),
-    inset 0 0 25px rgba(212,175,55,0.15);
+  box-shadow: 0 0 45px rgba(212,175,55,0.6);
 }
 
 .app-card img {
   width: 90px;
   margin-bottom: 15px;
-  filter: drop-shadow(0 0 10px var(--gold-glow));
 }
 
 .app-card h2 {
   color: var(--gold);
-  text-shadow: 0 0 10px var(--gold-glow);
-  margin-bottom: 8px;
 }
 
 .app-card p {
   font-size: 14px;
   opacity: 0.85;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
-/* ================= BUTTONS ================= */
+/* ================= BUTTON ================= */
 .btn {
   display: inline-block;
   padding: 12px 22px;
@@ -113,204 +83,111 @@ body {
   border: none;
   cursor: pointer;
   text-decoration: none;
+  font-weight: 700;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   color: #000;
-  font-weight: 700;
-  transition: all 0.3s ease;
-  box-shadow:
-    0 0 18px var(--gold-glow),
-    inset 0 0 10px rgba(255,255,255,0.25);
+  transition: 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.08);
-  box-shadow:
-    0 0 35px rgba(212,175,55,0.85),
-    inset 0 0 15px rgba(255,255,255,0.35);
 }
 
-/* 🔴 VIEW PACKAGE */
+/* 🔴 VIEW PACKAGE (RED) */
 button.btn {
   background: linear-gradient(135deg, #700000, #140000);
   color: #fff;
-  border: 1px solid rgba(255,80,80,0.5);
-  box-shadow: 0 0 20px rgba(255,0,0,0.55);
+  border: 1px solid rgba(255,80,80,0.6);
+  box-shadow: 0 0 25px rgba(255,0,0,0.6);
 }
 
 button.btn:hover {
   background: linear-gradient(135deg, #b00000, #2a0000);
-  box-shadow: 0 0 35px rgba(255,0,0,0.85);
-}
-
-.btn.outline {
-  background: transparent;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-}
-
-.btn.outline:hover {
-  background: var(--gold);
-  color: #000;
-}
-
-.btn.small {
-  padding: 7px 16px;
-  font-size: 13px;
 }
 
 /* ================= PAYMENT ================= */
 .payment {
   padding: 70px 20px;
   text-align: center;
-  background:
-    radial-gradient(circle at top, rgba(212,175,55,0.18), transparent),
-    linear-gradient(180deg, #0d0d0d, #000);
-  border-top: 1px solid rgba(212,175,55,0.2);
+  background: linear-gradient(180deg, #0d0d0d, #000);
 }
 
 .payment h2 {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  margin-bottom: 25px;
   color: var(--gold);
-  text-shadow: 0 0 10px var(--gold-glow);
+  margin-bottom: 30px;
 }
 
+/* PAYMENT BOX */
 .payment-box {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  max-width: 900px;
-  margin: auto;
 }
 
+/* ===== UNIFIED PAYMENT BUTTON SIZE ===== */
 .payment-btn {
-  min-width: 260px;
-  max-width: 380px;
-  padding: 30px;
+  width: 300px;
+  height: 120px;
+  padding: 22px;
   border-radius: 20px;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
   text-decoration: none;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  backdrop-filter: blur(16px);
-  transition: all 0.35s ease;
+  transition: 0.35s;
 }
 
-/* WhatsApp */
-.payment-btn.whatsapp {
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
-  color: #fff;
-  box-shadow: 0 0 30px rgba(37,211,102,0.6);
+.payment-btn span {
+  font-size: 14px;
+  margin-top: 6px;
+  opacity: 0.9;
 }
 
-.payment-btn.whatsapp:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 0 45px rgba(37,211,102,0.9);
-}
-
-/* QR */
-.payment-btn.qr {
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
-  color: #000;
-  box-shadow: 0 0 35px var(--gold-glow);
-}
-
-.payment-btn.qr:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 0 50px rgba(212,175,55,0.95);
-}
-
-/* TOYYIBPAY */
+/* 🔴 TOYYIBPAY (MATCH VIEW PACKAGE RED) */
 .payment-btn.toyyibpay {
-  background: linear-gradient(135deg, #0a8f4d, #0fd37a);
+  background: linear-gradient(135deg, #700000, #140000);
   color: #fff;
-  box-shadow:
-    0 0 35px rgba(15,211,122,0.65),
-    inset 0 0 12px rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,80,80,0.6);
+  box-shadow: 0 0 30px rgba(255,0,0,0.7);
 }
 
 .payment-btn.toyyibpay:hover {
   transform: translateY(-8px) scale(1.05);
-  box-shadow:
-    0 0 55px rgba(15,211,122,0.95),
-    inset 0 0 18px rgba(255,255,255,0.35);
+  background: linear-gradient(135deg, #b00000, #2a0000);
 }
 
-.payment-btn.toyyibpay span {
-  font-size: 14px;
-  font-weight: 500;
-  opacity: 0.9;
-  margin-top: 6px;
+/* 🟢 WHATSAPP */
+.payment-btn.whatsapp {
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color: #fff;
+  box-shadow: 0 0 30px rgba(37,211,102,0.7);
 }
 
-/* ================= INFO ================= */
-.reseller,
-.hours {
-  text-align: center;
-  padding: 45px 20px;
-  border-top: 1px solid rgba(255,255,255,0.06);
+.payment-btn.whatsapp:hover {
+  transform: translateY(-8px) scale(1.05);
 }
 
-.reseller h2,
-.hours h2 {
-  color: var(--gold);
-  text-shadow: 0 0 10px var(--gold-glow);
+/* 🟡 QR PAY */
+.payment-btn.qr {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #000;
+  box-shadow: 0 0 30px var(--gold-glow);
 }
 
-.reseller p {
-  opacity: 0.85;
-  margin-bottom: 18px;
+.payment-btn.qr:hover {
+  transform: translateY(-8px) scale(1.05);
 }
 
 /* ================= FOOTER ================= */
 footer {
-  background: #000;
-  padding: 22px;
+  padding: 20px;
   text-align: center;
-  font-size: 14px;
+  background: #000;
   border-top: 1px solid rgba(212,175,55,0.25);
-}
-
-/* ================= FLOATING ================= */
-.floating-whatsapp,
-.floating-telegram {
-  position: fixed;
-  right: 20px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  text-decoration: none;
-  z-index: 999;
-  transition: transform 0.3s ease;
-}
-
-.floating-whatsapp {
-  bottom: 20px;
-  background: #25D366;
-  color: #fff;
-  box-shadow: 0 0 25px rgba(37,211,102,0.8);
-}
-
-.floating-telegram {
-  bottom: 90px;
-  background: linear-gradient(135deg, #229ED9, #1c88c7);
-  color: #fff;
-  box-shadow: 0 0 25px rgba(34,158,217,0.8);
-}
-
-.floating-whatsapp:hover,
-.floating-telegram:hover {
-  transform: scale(1.15);
 }
 
 /* ================= MODAL ================= */
@@ -318,59 +195,29 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.88);
+  background: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
-  z-index: 1000;
 }
 
 .modal-box {
-  background:
-    linear-gradient(180deg, rgba(18,18,18,0.95), rgba(0,0,0,0.98));
-  padding: 32px;
+  background: #111;
+  padding: 30px;
   border-radius: 20px;
   width: 90%;
   max-width: 420px;
-  border: 1px solid rgba(212,175,55,0.35);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 0 40px rgba(212,175,55,0.5);
-}
-
-.modal-box h2 {
-  text-align: center;
-  color: var(--gold);
-  margin-bottom: 18px;
-}
-
-.modal-box ul {
-  list-style: none;
-}
-
-.modal-box li {
-  padding: 12px 0;
-  border-bottom: 1px dashed rgba(255,255,255,0.18);
-  display: flex;
-  justify-content: space-between;
 }
 
 .qr-img {
   width: 220px;
+  margin: 20px auto;
   display: block;
-  margin: 25px auto;
 }
 
-/* ================= RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 600px) {
-  .payment h2 {
-    font-size: 20px;
-  }
-
-  .btn {
-    width: 100%;
-  }
-
   .payment-btn {
-    font-size: 18px;
-    padding: 24px;
+    width: 100%;
+    height: auto;
   }
 }
