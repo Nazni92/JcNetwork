@@ -63,7 +63,6 @@
 
   <div class="payment-box">
 
-    <!-- TOYYIBPAY -->
     <a href="https://toyyibpay.com/JC-Mobile"
        class="payment-btn toyyibpay"
        target="_blank">
@@ -71,15 +70,13 @@
       <span>Online Banking • Card • E-Wallet</span>
     </a>
 
-    <!-- WHATSAPP -->
     <a href="https://wa.me/60179290815"
        class="payment-btn whatsapp"
        target="_blank">
       💬 Pay via WhatsApp
-      <span>Online Transfer • E-Wallet</span>
+      <span>Manual Transfer</span>
     </a>
 
-    <!-- QR -->
     <button class="payment-btn qr" onclick="openQR()">
       📱 Scan QR Pay
       <span>Instant Payment</span>
@@ -87,8 +84,7 @@
 
   </div>
 
-  <!-- CONFIRM PAYMENT -->
-  <a href="https://wa.me/60179290815?text=Hi%20Admin,%20I%20have%20paid%20via%20ToyyibPay.%20Here%20is%20my%20receipt."
+  <a href="https://wa.me/60179290815?text=Hi%20Admin,%20I%20have%20paid.%20Here%20is%20my%20receipt."
      class="btn outline"
      target="_blank">
     ✅ I Have Paid
@@ -142,8 +138,34 @@
 
 <!-- ================= SCRIPT ================= -->
 <script>
-const ADMIN_WA = "60179290815";
+/* ================= TOYYIBPAY LINKS ================= */
+const paymentLinks = {
+  KINGTV: {
+    "1 Month": "https://toyyibpay.com/kingtv-1m",
+    "3 Months": "https://toyyibpay.com/kingtv-3m",
+    "6 Months": "https://toyyibpay.com/kingtv-6m",
+    "1 Year": "https://toyyibpay.com/kingtv-1y",
+    "4 Years": "https://toyyibpay.com/kingtv-4y"
+  },
+  PANDAFLIX: {
+    "1 Month": "https://toyyibpay.com/panda-1m",
+    "3 Months": "https://toyyibpay.com/panda-3m",
+    "6 Months": "https://toyyibpay.com/panda-6m",
+    "1 Year": "https://toyyibpay.com/panda-1y"
+  },
+  TVTECHPRO: {
+    "1 Device • 1 Month": "https://toyyibpay.com/tvtech-1d-1m",
+    "1 Device • 3 Months": "https://toyyibpay.com/tvtech-1d-3m",
+    "1 Device • 6 Months": "https://toyyibpay.com/tvtech-1d-6m",
+    "1 Device • 1 Year": "https://toyyibpay.com/tvtech-1d-1y",
+    "2 Devices • 1 Month": "https://toyyibpay.com/tvtech-2d-1m",
+    "2 Devices • 3 Months": "https://toyyibpay.com/tvtech-2d-3m",
+    "2 Devices • 6 Months": "https://toyyibpay.com/tvtech-2d-6m",
+    "2 Devices • 1 Year": "https://toyyibpay.com/tvtech-2d-1y"
+  }
+};
 
+/* ================= PRICES ================= */
 const prices = {
   KINGTV: [
     { name: "1 Month", price: "RM15" },
@@ -173,28 +195,24 @@ const prices = {
 function openPackage(app) {
   document.getElementById("packageModal").style.display = "flex";
   document.getElementById("appTitle").innerText = app + " Packages";
+
   const list = document.getElementById("priceList");
   list.innerHTML = "";
 
   prices[app].forEach(pkg => {
+    const link = paymentLinks[app][pkg.name];
     const li = document.createElement("li");
     li.innerHTML = `
       ${pkg.name} — <strong>${pkg.price}</strong>
-      <button class="btn small" onclick="orderNow('${app}','${pkg.name}','${pkg.price}')">Order</button>
+      <button class="btn small" onclick="payNow('${link}')">Pay Now</button>
     `;
     list.appendChild(li);
   });
 }
 
-function orderNow(app, pkg, price) {
-  const msg =
-    `Hi Admin,%0A%0A` +
-    `I want to order:%0A` +
-    `📺 App: ${app}%0A` +
-    `📦 Package: ${pkg}%0A` +
-    `💰 Price: ${price}%0A%0AThank you.`;
-
-  window.open(`https://wa.me/${ADMIN_WA}?text=${msg}`, "_blank");
+function payNow(link) {
+  if (!link) return alert("Payment link not set");
+  window.open(link, "_blank");
 }
 
 function closePackage() {
