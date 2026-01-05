@@ -8,117 +8,74 @@
 </head>
 <body>
 
-<!-- ================= BANNER ================= -->
 <section class="banner">
   <img src="banner7.png" alt="JC Mobile Banner">
 </section>
 
-<!-- ================= APPS ================= -->
 <section class="container">
 
-  <!-- KING TV -->
   <div class="app-card">
     <img src="logo1.png" alt="King TV">
     <h2>King TV</h2>
     <p>Live TV, Movies & Sports</p>
-
     <a href="https://cutt.ly/king200" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('KINGTV')">📦 View Packages</button>
-    <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" class="btn outline" target="_blank">
-      📞 Support Group
-    </a>
+    <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
-  <!-- PANDAFLIX -->
   <div class="app-card">
     <img src="logo2.png" alt="PandaFlix">
     <h2>PandaFlix</h2>
     <p>OTT Premium IPTV</p>
-
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('PANDAFLIX')">📦 View Packages</button>
-    <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" class="btn outline" target="_blank">
-      📞 Support Group
-    </a>
+    <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
-  <!-- TVTECH PRO -->
   <div class="app-card">
     <img src="logo4.png" alt="TVTech Pro">
     <h2>TVTech Pro</h2>
     <p>OTT IPTV Premium</p>
-
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('TVTECHPRO')">📦 View Packages</button>
-    <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR" class="btn outline" target="_blank">
-      📞 Support Group
-    </a>
+    <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
 </section>
 
-<!-- ================= PAYMENT ================= -->
 <section class="payment">
   <h2>💳 Payment Method</h2>
-
   <div class="payment-box">
-
-    <a href="https://toyyibpay.com/JC-Mobile"
-       class="payment-btn toyyibpay"
-       target="_blank">
+    <a href="https://toyyibpay.com/JC-Mobile" class="payment-btn toyyibpay" target="_blank">
       💳 Pay via ToyyibPay
       <span>Online Banking • Card • E-Wallet</span>
     </a>
-
-    <a href="https://wa.me/60179290815"
-       class="payment-btn whatsapp"
-       target="_blank">
+    <a href="https://wa.me/60179290815" class="payment-btn whatsapp" target="_blank">
       💬 Pay via WhatsApp
       <span>Manual Transfer</span>
     </a>
-
-    <button class="payment-btn qr" onclick="openQR()">
-      📱 Scan QR Pay
-      <span>Instant Payment</span>
-    </button>
-
+    <button class="payment-btn qr" onclick="openQR()">📱 Scan QR Pay<span>Instant Payment</span></button>
   </div>
-
-  <a href="https://wa.me/60179290815?text=Hi%20Admin,%20I%20have%20paid.%20Here%20is%20my%20receipt."
-     class="btn outline"
-     target="_blank">
-    ✅ I Have Paid
-  </a>
 </section>
 
-<!-- ================= RESELLER ================= -->
 <section class="reseller">
   <h2>🤝 Become a Reseller</h2>
   <p>Earn income by selling our IPTV</p>
-
-  <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller"
-     class="btn"
-     target="_blank">
+  <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller" class="btn" target="_blank">
     💼 I Want to Be a Reseller
   </a>
 </section>
 
-<!-- ================= HOURS ================= -->
 <section class="hours">
   <h2>🕘 Operation Hours</h2>
   <p>Daily • 9:00 AM – 11:00 PM</p>
 </section>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  © 2026 JC Mobile Shop — All Rights Reserved
-</footer>
+<footer>© 2026 JC Mobile Shop — All Rights Reserved</footer>
 
-<!-- ================= FLOATING BUTTONS ================= -->
 <a href="https://wa.me/60179290815" class="floating-whatsapp" target="_blank">💬</a>
 <a href="https://t.me/jcmobileapps" class="floating-telegram" target="_blank">✈️</a>
 
-<!-- ================= PACKAGE MODAL ================= -->
 <div class="modal" id="packageModal">
   <div class="modal-box">
     <h2 id="appTitle"></h2>
@@ -127,18 +84,15 @@
   </div>
 </div>
 
-<!-- ================= QR MODAL ================= -->
 <div class="modal" id="qrModal">
   <div class="modal-box">
     <h2>📲 Scan QR to Pay</h2>
-    <img src="qr.png" class="qr-img" alt="QR Payment">
+    <img src="qr.png" class="qr-img">
     <button class="btn outline" onclick="closeQR()">Done</button>
   </div>
 </div>
 
-<!-- ================= SCRIPT ================= -->
 <script>
-/* ================= TOYYIBPAY LINKS ================= */
 const paymentLinks = {
   KINGTV: {
     "1 Month": "https://toyyibpay.com/JC-Mobile-King15",
@@ -165,7 +119,6 @@ const paymentLinks = {
   }
 };
 
-/* ================= PRICES ================= */
 const prices = {
   KINGTV: [
     { name: "1 Month", price: "RM15" },
@@ -195,37 +148,28 @@ const prices = {
 function openPackage(app) {
   document.getElementById("packageModal").style.display = "flex";
   document.getElementById("appTitle").innerText = app + " Packages";
-
   const list = document.getElementById("priceList");
   list.innerHTML = "";
 
   prices[app].forEach(pkg => {
     const link = paymentLinks[app][pkg.name];
-    const li = document.createElement("li");
-    li.innerHTML = `
-      ${pkg.name} — <strong>${pkg.price}</strong>
-      <button class="btn small" onclick="payNow('${link}')">Pay Now</button>
-    `;
-    list.appendChild(li);
+    list.innerHTML += `
+      <li>
+        ${pkg.name} — <strong>${pkg.price}</strong>
+        <button class="btn small" onclick="payNow('${link}','${app}','${pkg.name}')">Pay Now</button>
+      </li>`;
   });
 }
 
-function payNow(link) {
-  if (!link) return alert("Payment link not set");
-  window.open(link, "_blank");
+function payNow(link, app, pkg) {
+  localStorage.setItem("paidApp", app);
+  localStorage.setItem("paidPackage", pkg);
+  window.location.href = link;
 }
 
-function closePackage() {
-  document.getElementById("packageModal").style.display = "none";
-}
-
-function openQR() {
-  document.getElementById("qrModal").style.display = "flex";
-}
-
-function closeQR() {
-  document.getElementById("qrModal").style.display = "none";
-}
+function closePackage(){document.getElementById("packageModal").style.display="none";}
+function openQR(){document.getElementById("qrModal").style.display="flex";}
+function closeQR(){document.getElementById("qrModal").style.display="none";}
 </script>
 
 </body>
