@@ -24,8 +24,7 @@
 
     <a href="https://cutt.ly/king200" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('KINGTV')">📦 View Packages</button>
-    <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq"
-       class="btn outline" target="_blank">
+    <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" class="btn outline" target="_blank">
       📞 Support Group
     </a>
   </div>
@@ -38,8 +37,7 @@
 
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('PANDAFLIX')">📦 View Packages</button>
-    <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha"
-       class="btn outline" target="_blank">
+    <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" class="btn outline" target="_blank">
       📞 Support Group
     </a>
   </div>
@@ -52,22 +50,19 @@
 
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('TVTECHPRO')">📦 View Packages</button>
-    <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR"
-       class="btn outline" target="_blank">
+    <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR" class="btn outline" target="_blank">
       📞 Support Group
     </a>
   </div>
 
 </section>
 
-<!-- ================= BIG PAYMENT ================= -->
+<!-- ================= PAYMENT ================= -->
 <section class="payment">
   <h2>💳 Payment Method</h2>
 
   <div class="payment-box">
-    <a href="https://wa.me/60179290815"
-       class="payment-btn whatsapp"
-       target="_blank">
+    <a href="https://wa.me/60179290815" class="payment-btn whatsapp" target="_blank">
       💬 Pay via WhatsApp
       <span>Online Transfer / E-Wallet</span>
     </a>
@@ -85,8 +80,7 @@
   <p>Earn income by selling our IPTV</p>
 
   <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller"
-     class="btn reseller-btn"
-     target="_blank">
+     class="btn" target="_blank">
     💼 I Want to Be a Reseller
   </a>
 </section>
@@ -102,21 +96,9 @@
   © 2026 JC Mobile Shop — All Rights Reserved
 </footer>
 
-<!-- ================= FLOATING WHATSAPP ================= -->
-<a href="https://wa.me/60179290815"
-   class="floating-whatsapp"
-   target="_blank"
-   title="Chat on WhatsApp">
-  💬
-</a>
-
-<!-- ================= FLOATING TELEGRAM ================= -->
-<a href="https://t.me/jcmobileapps"
-   class="floating-telegram"
-   target="_blank"
-   title="Chat on Telegram">
-  ✈️
-</a>
+<!-- ================= FLOATING BUTTONS ================= -->
+<a href="https://wa.me/60179290815" class="floating-whatsapp" target="_blank">💬</a>
+<a href="https://t.me/jcmobileapps" class="floating-telegram" target="_blank">✈️</a>
 
 <!-- ================= PACKAGE MODAL ================= -->
 <div class="modal" id="packageModal">
@@ -169,7 +151,6 @@ const prices = {
 function openPackage(app) {
   document.getElementById("packageModal").style.display = "flex";
   document.getElementById("appTitle").innerText = app + " Packages";
-
   const list = document.getElementById("priceList");
   list.innerHTML = "";
 
@@ -177,10 +158,7 @@ function openPackage(app) {
     const li = document.createElement("li");
     li.innerHTML = `
       ${pkg.name} — <strong>${pkg.price}</strong>
-      <button class="btn small"
-        onclick="orderNow('${app}','${pkg.name}','${pkg.price}')">
-        Order
-      </button>
+      <button class="btn small" onclick="orderNow('${app}','${pkg.name}','${pkg.price}')">Order</button>
     `;
     list.appendChild(li);
   });
@@ -192,8 +170,7 @@ function orderNow(app, pkg, price) {
     `I want to order:%0A` +
     `📺 App: ${app}%0A` +
     `📦 Package: ${pkg}%0A` +
-    `💰 Price: ${price}%0A%0A` +
-    `Thank you.`;
+    `💰 Price: ${price}%0A%0AThank you.`;
 
   window.open(`https://wa.me/${ADMIN_WA}?text=${msg}`, "_blank");
 }
