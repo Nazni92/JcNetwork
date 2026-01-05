@@ -16,7 +16,6 @@
 <!-- ================= APPS ================= -->
 <section class="container">
 
-  <!-- KING TV -->
   <div class="app-card">
     <img src="logo1.png" alt="King TV">
     <h2>King TV</h2>
@@ -26,7 +25,6 @@
     <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
-  <!-- PANDAFLIX -->
   <div class="app-card">
     <img src="logo2.png" alt="PandaFlix">
     <h2>PandaFlix</h2>
@@ -36,7 +34,6 @@
     <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
-  <!-- TVTECH PRO -->
   <div class="app-card">
     <img src="logo4.png" alt="TVTech Pro">
     <h2>TVTech Pro</h2>
@@ -53,16 +50,12 @@
   <h2>💳 Payment Method</h2>
   <div class="payment-box">
 
-    <a href="https://toyyibpay.com/JC-Mobile"
-       class="payment-btn toyyibpay"
-       target="_blank">
+    <a href="https://toyyibpay.com/JC-Mobile" class="payment-btn toyyibpay" target="_blank">
       💳 Pay via ToyyibPay
       <span>Online Banking • Card • E-Wallet</span>
     </a>
 
-    <a href="https://wa.me/60179290815"
-       class="payment-btn whatsapp"
-       target="_blank">
+    <a href="https://wa.me/60179290815" class="payment-btn whatsapp" target="_blank">
       💬 Pay via WhatsApp
       <span>Manual Transfer</span>
     </a>
@@ -75,13 +68,59 @@
   </div>
 </section>
 
+<!-- ================= REVIEWS ================= -->
+<section class="reviews">
+  <h2>⭐ Trusted by Customers Worldwide</h2>
+
+  <div class="review-box">
+    <div class="review-card">
+      <img src="flags/vietnam.png">
+      <p>"Very stable IPTV, many channels. Support very fast 👍"</p>
+      <span>— Nguyen (Vietnam)</span>
+    </div>
+
+    <div class="review-card">
+      <img src="flags/thailand.png">
+      <p>"HD sports, smooth streaming. Worth every ringgit."</p>
+      <span>— Somchai (Thailand)</span>
+    </div>
+
+    <div class="review-card">
+      <img src="flags/singapore.png">
+      <p>"No buffering, clear HD channels. Trusted seller."</p>
+      <span>— Daniel (Singapore)</span>
+    </div>
+
+    <div class="review-card">
+      <img src="flags/malaysia.png">
+      <p>"Admin fast reply, activation cepat. Recommended!"</p>
+      <span>— Aiman (Malaysia)</span>
+    </div>
+
+    <div class="review-card">
+      <img src="flags/indonesia.png">
+      <p>"Channel lengkap, harga murah. Mantap 🔥"</p>
+      <span>— Rizky (Indonesia)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUSTED ================= -->
+<section class="trusted">
+  <h2>🔒 100% Trusted & Authorized Reseller</h2>
+  <div class="trusted-logos">
+    <img src="trust/secure.png">
+    <img src="trust/verified.png">
+    <img src="trust/reseller.png">
+    <img src="trust/support.png">
+  </div>
+</section>
+
 <!-- ================= RESELLER ================= -->
 <section class="reseller">
   <h2>🤝 Become a Reseller</h2>
   <p>Earn income by selling our IPTV</p>
-  <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller"
-     class="btn"
-     target="_blank">
+  <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller" class="btn" target="_blank">
     💼 I Want to Be a Reseller
   </a>
 </section>
@@ -118,7 +157,6 @@
 
 <!-- ================= SCRIPT ================= -->
 <script>
-/* ===== TOYYIBPAY LINKS ===== */
 const paymentLinks = {
   KINGTV: {
     "1 Month": "https://toyyibpay.com/JC-Mobile-King15",
@@ -145,7 +183,6 @@ const paymentLinks = {
   }
 };
 
-/* ===== PRICES ===== */
 const prices = {
   KINGTV: [
     { name: "1 Month", price: "RM15" },
@@ -176,18 +213,12 @@ function openPackage(app, appName) {
   localStorage.setItem("paidApp", appName);
   document.getElementById("packageModal").style.display = "flex";
   document.getElementById("appTitle").innerText = appName + " Packages";
-
   const list = document.getElementById("priceList");
   list.innerHTML = "";
-
   prices[app].forEach(pkg => {
-    const link = paymentLinks[app][pkg.name];
     list.innerHTML += `
-      <li>
-        ${pkg.name} — <strong>${pkg.price}</strong>
-        <button class="btn small" onclick="payNow('${link}','${pkg.name}')">
-          Pay Now
-        </button>
+      <li>${pkg.name} — <strong>${pkg.price}</strong>
+      <button class="btn small" onclick="payNow('${paymentLinks[app][pkg.name]}','${pkg.name}')">Pay Now</button>
       </li>`;
   });
 }
@@ -197,9 +228,9 @@ function payNow(link, pkg) {
   window.location.href = link;
 }
 
-function closePackage(){ document.getElementById("packageModal").style.display="none"; }
-function openQR(){ document.getElementById("qrModal").style.display="flex"; }
-function closeQR(){ document.getElementById("qrModal").style.display="none"; }
+function closePackage(){document.getElementById("packageModal").style.display="none";}
+function openQR(){document.getElementById("qrModal").style.display="flex";}
+function closeQR(){document.getElementById("qrModal").style.display="none";}
 </script>
 
 </body>
