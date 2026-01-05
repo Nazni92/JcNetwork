@@ -1,223 +1,287 @@
-/* ==============================
-   JC Mobile & Gadget - IPTV CSS
-   Gold Theme | Dark Mode
-   ============================== */
-
+/* ===============================
+   GLOBAL
+================================ */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0b0b0b;
-    color: #ffffff;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0b0b0b;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
-/* ==============================
-   Banner
-   ============================== */
-
+/* ===============================
+   BANNER
+================================ */
 .banner img {
-    width: 100%;
-    max-height: 320px;
-    object-fit: cover;
-    display: block;
-    border-bottom: 2px solid gold;
+  width: 100%;
+  max-height: 320px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 3px solid gold;
 }
 
-/* ==============================
-   Header
-   ============================== */
-
-header {
-    text-align: center;
-    padding: 20px 10px;
+/* ===============================
+   CONTAINER
+================================ */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-header h1 {
-    color: gold;
-    font-size: 32px;
-    margin-bottom: 5px;
-}
-
-header p {
-    color: #cccccc;
-    font-size: 15px;
-}
-
-/* ==============================
-   App Cards Section
-   ============================== */
-
-.apps {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-
+/* ===============================
+   APP CARD
+================================ */
 .app-card {
-    background: #111111;
-    border: 1px solid gold;
-    border-radius: 12px;
-    width: 300px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #121212;
+  border: 1px solid gold;
+  border-radius: 14px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .app-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.45);
+}
+
+.app-card img {
+  width: 90px;
+  margin-bottom: 10px;
 }
 
 .app-card h2 {
-    color: gold;
-    text-align: center;
-    margin-bottom: 10px;
+  color: gold;
+  margin-bottom: 5px;
 }
 
-.app-card h4 {
-    color: #ffcc00;
-    margin-top: 15px;
-    margin-bottom: 5px;
+.app-card p {
+  color: #cccccc;
+  font-size: 14px;
+  margin-bottom: 15px;
 }
 
-/* Buttons inside cards */
-.app-card a {
-    display: block;
-    margin: 8px 0;
-    background: linear-gradient(135deg, #ffd700, #ffb700);
-    color: #000;
-    text-align: center;
-    padding: 10px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.2s ease;
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, gold, #ffb700);
+  color: #000;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.app-card a:hover {
-    opacity: 0.85;
+.btn:hover {
+  transform: scale(1.03);
+  opacity: 0.9;
 }
 
-/* Lists */
-.app-card ul {
-    padding-left: 18px;
-    margin-top: 10px;
+.btn.outline {
+  background: transparent;
+  color: gold;
+  border: 2px solid gold;
 }
 
-.app-card ul li {
-    margin-bottom: 5px;
-    font-size: 14px;
+.reseller-btn {
+  max-width: 300px;
+  margin: 15px auto;
 }
 
-/* Notes */
-.note {
-    color: #ff4444;
-    font-size: 13px;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* ==============================
-   Payment Section
-   ============================== */
-
+/* ===============================
+   PAYMENT
+================================ */
 .payment {
-    text-align: center;
-    padding: 40px 20px;
-    background: #0f0f0f;
+  text-align: center;
+  padding: 40px 20px;
+  background: #0f0f0f;
 }
 
 .payment h2 {
-    color: gold;
-    margin-bottom: 15px;
+  color: gold;
+  margin-bottom: 15px;
 }
 
-.payment img {
-    max-width: 260px;
-    border: 3px solid gold;
-    border-radius: 12px;
-    margin-top: 10px;
+/* ===============================
+   RESELLER
+================================ */
+.reseller {
+  text-align: center;
+  padding: 40px 20px;
 }
 
-/* Payment Button */
-.pay-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 30px;
-    background: linear-gradient(135deg, gold, #ffb700);
-    color: #000;
-    font-weight: bold;
-    border-radius: 30px;
-    text-decoration: none;
-    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-    transition: transform 0.2s ease;
+.reseller h2 {
+  color: gold;
+  margin-bottom: 10px;
 }
 
-.pay-btn:hover {
-    transform: scale(1.05);
+.reseller p {
+  color: #cccccc;
+  margin-bottom: 15px;
 }
 
-/* ==============================
-   Footer
-   ============================== */
+/* ===============================
+   TESTIMONIALS
+================================ */
+.testimonials {
+  background: #111;
+  padding: 50px 20px;
+}
 
+.testimonials h2 {
+  text-align: center;
+  color: gold;
+  margin-bottom: 30px;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.review-card {
+  background: #1a1a1a;
+  border: 1px solid gold;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.review-text {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.review-user {
+  font-size: 13px;
+  color: gold;
+}
+
+/* ===============================
+   HOURS
+================================ */
+.hours {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.hours h2 {
+  color: gold;
+}
+
+.hours p {
+  color: #cccccc;
+}
+
+/* ===============================
+   FOOTER
+================================ */
 footer {
-    background: #000000;
-    text-align: center;
-    padding: 15px;
-    color: #cccccc;
-    font-size: 14px;
+  background: #000;
+  text-align: center;
+  padding: 15px;
+  font-size: 13px;
+  color: #aaaaaa;
 }
 
-/* ==============================
-   Floating WhatsApp Button
-   ============================== */
-
+/* ===============================
+   FLOATING WHATSAPP
+================================ */
 .floating-whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: linear-gradient(135deg, gold, #ffb700);
-    color: #000;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    text-align: center;
-    line-height: 60px;
-    font-size: 28px;
-    box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
-    text-decoration: none;
-    z-index: 999;
-    animation: pulse 1.5s infinite;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, gold, #ffb700);
+  color: #000;
+  text-align: center;
+  line-height: 60px;
+  font-size: 28px;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+  text-decoration: none;
+  z-index: 999;
+  animation: pulse 1.5s infinite;
 }
 
-/* Pulse animation */
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
-    70% { box-shadow: 0 0 0 20px rgba(255, 215, 0, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7); }
+  70% { box-shadow: 0 0 0 20px rgba(255, 215, 0, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
 }
 
-/* ==============================
-   Responsive (Mobile)
-   ============================== */
+/* ===============================
+   MODAL
+================================ */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
 
+.modal-box {
+  background: #111;
+  border: 2px solid gold;
+  border-radius: 14px;
+  padding: 25px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.modal-box h2 {
+  color: gold;
+  margin-bottom: 15px;
+}
+
+.modal-box ul {
+  list-style: none;
+  margin-bottom: 15px;
+}
+
+.modal-box ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+.qr-img {
+  width: 200px;
+  margin: 15px auto;
+  display: block;
+  border-radius: 10px;
+  border: 2px solid gold;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
 @media (max-width: 768px) {
-    header h1 {
-        font-size: 26px;
-    }
-
-    .app-card {
-        width: 100%;
-        max-width: 350px;
-    }
-
-    .banner img {
-        max-height: 220px;
-    }
+  .banner img {
+    max-height: 220px;
+  }
 }
