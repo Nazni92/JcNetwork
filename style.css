@@ -24,11 +24,6 @@ body {
 }
 
 /* ================= BANNER ================= */
-.banner {
-  position: relative;
-  overflow: hidden;
-}
-
 .banner img {
   width: 100%;
   height: 320px;
@@ -53,17 +48,13 @@ body {
   text-align: center;
   border: 1px solid rgba(212,175,55,0.35);
   backdrop-filter: blur(14px);
-  box-shadow:
-    0 0 30px rgba(212,175,55,0.15),
-    inset 0 0 20px rgba(212,175,55,0.05);
-  transition: all 0.35s ease;
+  box-shadow: 0 0 30px rgba(212,175,55,0.15);
+  transition: 0.35s;
 }
 
 .app-card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow:
-    0 0 45px rgba(212,175,55,0.6),
-    inset 0 0 25px rgba(212,175,55,0.15);
+  box-shadow: 0 0 45px rgba(212,175,55,0.6);
 }
 
 .app-card img {
@@ -95,20 +86,15 @@ body {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   color: #000;
   font-weight: 700;
-  transition: all 0.3s ease;
-  box-shadow:
-    0 0 18px var(--gold-glow),
-    inset 0 0 10px rgba(255,255,255,0.25);
+  transition: 0.3s;
+  box-shadow: 0 0 18px var(--gold-glow);
 }
 
 .btn:hover {
   transform: scale(1.08);
-  box-shadow:
-    0 0 35px rgba(212,175,55,0.85),
-    inset 0 0 15px rgba(255,255,255,0.35);
 }
 
-/* 🔴 VIEW PACKAGE */
+/* VIEW PACKAGE (RED) */
 button.btn {
   background: linear-gradient(135deg, #700000, #140000);
   color: #fff;
@@ -118,24 +104,9 @@ button.btn {
 
 button.btn:hover {
   background: linear-gradient(135deg, #b00000, #2a0000);
-  box-shadow: 0 0 35px rgba(255,0,0,0.85);
 }
 
-/* 🔲 SUPPORT GROUP (BLACK GLASS) */
-.app-card .btn.outline {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.35);
-  color: #fff;
-  box-shadow: inset 0 0 10px rgba(255,255,255,0.05);
-}
-
-.app-card .btn.outline:hover {
-  background: rgba(255,255,255,0.1);
-  border-color: rgba(255,255,255,0.6);
-  transform: scale(1.05);
-}
-
-/* OTHER OUTLINE BUTTONS */
+/* OUTLINE */
 .btn.outline {
   background: transparent;
   border: 1px solid var(--gold);
@@ -156,19 +127,13 @@ button.btn:hover {
 .payment {
   padding: 70px 20px;
   text-align: center;
-  background:
-    radial-gradient(circle at top, rgba(212,175,55,0.18), transparent),
-    linear-gradient(180deg, #0d0d0d, #000);
+  background: linear-gradient(180deg, #0d0d0d, #000);
   border-top: 1px solid rgba(212,175,55,0.2);
 }
 
 .payment h2 {
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  margin-bottom: 25px;
   color: var(--gold);
-  text-shadow: 0 0 10px var(--gold-glow);
+  margin-bottom: 25px;
 }
 
 .payment-box {
@@ -176,100 +141,93 @@ button.btn:hover {
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  max-width: 900px;
-  margin: auto;
 }
 
-/* UNIFIED PAYMENT BUTTON */
 .payment-btn {
   width: 300px;
-  height: 120px;
-  padding: 22px;
+  padding: 25px;
   border-radius: 20px;
   font-size: 20px;
   font-weight: 800;
   text-decoration: none;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(16px);
-  transition: all 0.35s ease;
+  transition: 0.35s;
 }
 
-.payment-btn span {
-  font-size: 14px;
-  font-weight: 500;
-  opacity: 0.9;
-  margin-top: 6px;
-}
-
-/* 🔴 TOYYIBPAY */
+/* PAYMENT COLORS */
 .payment-btn.toyyibpay {
   background: linear-gradient(135deg, #700000, #140000);
   color: #fff;
-  border: 1px solid rgba(255,80,80,0.6);
-  box-shadow: 0 0 30px rgba(255,0,0,0.7);
 }
 
-.payment-btn.toyyibpay:hover {
-  transform: translateY(-8px) scale(1.05);
-  background: linear-gradient(135deg, #b00000, #2a0000);
-  box-shadow: 0 0 45px rgba(255,0,0,0.9);
-}
-
-/* 🟢 WHATSAPP */
 .payment-btn.whatsapp {
   background: linear-gradient(135deg, #25D366, #1ebe5d);
   color: #fff;
-  box-shadow: 0 0 30px rgba(37,211,102,0.7);
 }
 
-.payment-btn.whatsapp:hover {
-  transform: translateY(-8px) scale(1.05);
-}
-
-/* 🟡 QR */
 .payment-btn.qr {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   color: #000;
-  box-shadow: 0 0 30px var(--gold-glow);
 }
 
-.payment-btn.qr:hover {
-  transform: translateY(-8px) scale(1.05);
+/* ================= MODAL ================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 10px;
 }
 
-/* ================= RESELLER & HOURS ================= */
-.reseller,
-.hours {
+.modal-box {
+  background: linear-gradient(180deg, #141414, #000);
+  padding: 26px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 420px;
+  max-height: 85vh;
+  overflow-y: auto;
+  border: 1px solid rgba(212,175,55,0.35);
+}
+
+.modal-box h2 {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(180deg, #0b0b0b, #000);
-  border-top: 1px solid rgba(212,175,55,0.25);
-}
-
-.reseller h2,
-.hours h2 {
   color: var(--gold);
-  text-shadow: 0 0 10px var(--gold-glow);
-  margin-bottom: 12px;
-}
-
-.reseller p,
-.hours p {
-  opacity: 0.85;
   margin-bottom: 18px;
 }
 
-/* ================= FOOTER ================= */
-footer {
-  background: #000;
-  padding: 22px;
-  text-align: center;
+/* ================= PACKAGE LIST (FIXED) ================= */
+#priceList {
+  list-style: none;
+  padding: 0;
+}
+
+#priceList li {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 14px;
-  border-top: 1px solid rgba(212,175,55,0.25);
+}
+
+#priceList strong {
+  color: var(--gold);
+}
+
+/* ================= QR ================= */
+.qr-img {
+  width: 220px;
+  display: block;
+  margin: 25px auto;
 }
 
 /* ================= FLOATING ================= */
@@ -284,81 +242,21 @@ footer {
   align-items: center;
   justify-content: center;
   font-size: 26px;
-  text-decoration: none;
   z-index: 999;
-  transition: transform 0.3s ease;
 }
 
 .floating-whatsapp {
   bottom: 20px;
   background: #25D366;
-  color: #fff;
-  box-shadow: 0 0 25px rgba(37,211,102,0.8);
 }
 
 .floating-telegram {
   bottom: 90px;
-  background: linear-gradient(135deg, #229ED9, #1c88c7);
-  color: #fff;
-  box-shadow: 0 0 25px rgba(34,158,217,0.8);
+  background: #229ED9;
 }
 
-.floating-whatsapp:hover,
-.floating-telegram:hover {
-  transform: scale(1.15);
-}
-
-/* ================= MODAL ================= */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.88);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-box {
-  background:
-    linear-gradient(180deg, rgba(18,18,18,0.95), rgba(0,0,0,0.98));
-  padding: 32px;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 420px;
-  border: 1px solid rgba(212,175,55,0.35);
-  backdrop-filter: blur(18px);
-  box-shadow: 0 0 40px rgba(212,175,55,0.5);
-}
-
-.modal-box h2 {
-  text-align: center;
-  color: var(--gold);
-  margin-bottom: 18px;
-}
-
-.modal-box ul {
-  list-style: none;
-}
-
-.modal-box li {
-  padding: 12px 0;
-  border-bottom: 1px dashed rgba(255,255,255,0.18);
-  display: flex;
-  justify-content: space-between;
-}
-
-.qr-img {
-  width: 220px;
-  display: block;
-  margin: 25px auto;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 600px) {
-  .payment h2 {
-    font-size: 20px;
-  }
+/* ================= MOBILE ================= */
+@media (max-width: 480px) {
 
   .btn {
     width: 100%;
@@ -366,6 +264,16 @@ footer {
 
   .payment-btn {
     width: 100%;
-    height: auto;
+  }
+
+  #priceList li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  #priceList .btn.small {
+    width: 100%;
+    text-align: center;
   }
 }
