@@ -8,7 +8,7 @@
 
 body {
   background: #0b0b0b;
-  color: #fff;
+  color: #ffffff;
   line-height: 1.6;
 }
 
@@ -38,12 +38,12 @@ body {
   text-align: center;
   border: 1px solid rgba(212,175,55,0.25);
   box-shadow: 0 15px 35px rgba(0,0,0,0.7);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .app-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 25px 45px rgba(212,175,55,0.25);
+  box-shadow: 0 25px 45px rgba(212,175,55,0.35);
 }
 
 .app-card img {
@@ -99,23 +99,94 @@ body {
   margin-left: 10px;
 }
 
-/* ================= PAYMENT / RESELLER ================= */
-.payment, .reseller, .hours {
+/* ================= BIG PAYMENT ================= */
+.payment {
+  padding: 60px 20px;
+  text-align: center;
+  background: radial-gradient(circle at top, #111, #000);
+  border-top: 1px solid rgba(212,175,55,0.15);
+}
+
+.payment h2 {
+  font-size: 28px;
+  color: #d4af37;
+  margin-bottom: 30px;
+}
+
+.payment-box {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
+}
+
+.payment-btn {
+  flex: 1;
+  min-width: 260px;
+  max-width: 380px;
+  padding: 28px;
+  border-radius: 18px;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-btn span {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 8px;
+  opacity: 0.85;
+}
+
+/* WhatsApp Payment */
+.payment-btn.whatsapp {
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
+  color: #ffffff;
+  box-shadow: 0 15px 35px rgba(37,211,102,0.45);
+}
+
+.payment-btn.whatsapp:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 45px rgba(37,211,102,0.7);
+}
+
+/* QR Payment */
+.payment-btn.qr {
+  background: linear-gradient(135deg, #d4af37, #f5d76e);
+  color: #000;
+  box-shadow: 0 15px 35px rgba(212,175,55,0.55);
+}
+
+.payment-btn.qr:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 45px rgba(212,175,55,0.75);
+}
+
+/* ================= RESELLER & HOURS ================= */
+.reseller, .hours {
   text-align: center;
   padding: 40px 20px;
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 
-.payment h2,
 .reseller h2,
 .hours h2 {
   color: #d4af37;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .reseller p {
-  margin-bottom: 15px;
   opacity: 0.85;
+  margin-bottom: 15px;
 }
 
 /* ================= FOOTER ================= */
@@ -181,7 +252,7 @@ footer {
   width: 90%;
   max-width: 420px;
   border: 1px solid rgba(212,175,55,0.3);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.85);
 }
 
 .modal-box h2 {
@@ -211,15 +282,16 @@ footer {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 600px) {
-  .app-card {
-    padding: 20px;
-  }
-
   .btn {
     width: 100%;
   }
 
   .btn.small {
     width: auto;
+  }
+
+  .payment-btn {
+    font-size: 18px;
+    padding: 22px;
   }
 }
