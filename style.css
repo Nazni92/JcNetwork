@@ -168,7 +168,6 @@ button.btn:hover {
   border-top: 1px solid rgba(212,175,55,0.2);
 }
 
-/* 🔽 SMALLER, PREMIUM TITLE */
 .payment h2 {
   font-size: 22px;
   font-weight: 600;
@@ -176,16 +175,6 @@ button.btn:hover {
   margin-bottom: 25px;
   color: var(--gold);
   text-shadow: 0 0 10px var(--gold-glow);
-  position: relative;
-}
-
-.payment h2::after {
-  content: "";
-  display: block;
-  width: 70px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 12px auto 0;
 }
 
 .payment-box {
@@ -235,6 +224,29 @@ button.btn:hover {
 .payment-btn.qr:hover {
   transform: translateY(-8px) scale(1.05);
   box-shadow: 0 0 50px rgba(212,175,55,0.95);
+}
+
+/* TOYYIBPAY */
+.payment-btn.toyyibpay {
+  background: linear-gradient(135deg, #0a8f4d, #0fd37a);
+  color: #fff;
+  box-shadow:
+    0 0 35px rgba(15,211,122,0.65),
+    inset 0 0 12px rgba(255,255,255,0.25);
+}
+
+.payment-btn.toyyibpay:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow:
+    0 0 55px rgba(15,211,122,0.95),
+    inset 0 0 18px rgba(255,255,255,0.35);
+}
+
+.payment-btn.toyyibpay span {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-top: 6px;
 }
 
 /* ================= INFO ================= */
