@@ -23,7 +23,9 @@
     <p>Live TV, Movies & Sports</p>
     <a href="https://cutt.ly/king200" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('KINGTV','King TV')">📦 View Packages</button>
-    <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" class="btn outline" target="_blank">📞 Support Group</a>
+    <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" class="btn outline" target="_blank">
+      📞 Support Group
+    </a>
   </div>
 
   <!-- PANDAFLIX -->
@@ -33,7 +35,9 @@
     <p>OTT Premium IPTV</p>
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('PANDAFLIX','PandaFlix')">📦 View Packages</button>
-    <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" class="btn outline" target="_blank">📞 Support Group</a>
+    <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" class="btn outline" target="_blank">
+      📞 Support Group
+    </a>
   </div>
 
   <!-- TVTECH PRO -->
@@ -43,7 +47,9 @@
     <p>OTT IPTV Premium</p>
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('TVTECHPRO','TVTech Pro')">📦 View Packages</button>
-    <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR" class="btn outline" target="_blank">📞 Support Group</a>
+    <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR" class="btn outline" target="_blank">
+      📞 Support Group
+    </a>
   </div>
 
 </section>
@@ -51,8 +57,8 @@
 <!-- ================= PAYMENT ================= -->
 <section class="payment">
   <h2>💳 Payment Method</h2>
-  <div class="payment-box">
 
+  <div class="payment-box">
     <a href="https://toyyibpay.com/JC-Mobile"
        class="payment-btn toyyibpay"
        target="_blank">
@@ -71,52 +77,6 @@
       📱 Scan QR Pay
       <span>Instant Payment</span>
     </button>
-
-  </div>
-</section>
-
-<!-- ================= CUSTOMER REVIEWS ================= -->
-<section class="reviews">
-  <h2>⭐ Customer Reviews</h2>
-  <p class="review-sub">Trusted by customers across Asia</p>
-
-  <div class="review-box">
-
-    <div class="review-card">
-      <p class="review-text">
-        “Very stable IPTV, HD quality and fast support. Best service I used so far.”
-      </p>
-      <span class="review-name">— Minh T,Japan.</span>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">
-        “Payment was easy and activation was instant. Channels are complete.”
-      </p>
-      <span class="review-name">— Somchai K,Thailand.</span>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">
-        “Works perfectly on Android TV. Worth every ringgit.”
-      </p>
-      <span class="review-name">— Daniel L,Singapore.</span>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">
-        “Customer service replies fast and helps until solved.”
-      </p>
-      <span class="review-name">— Ahmad R,Malaysia.</span>
-    </div>
-
-    <div class="review-card">
-      <p class="review-text">
-        “Smooth streaming, no buffering during live sports.”
-      </p>
-      <span class="review-name">— Rizky A,Indonesia.</span>
-    </div>
-
   </div>
 </section>
 
@@ -156,7 +116,7 @@
 <div class="modal" id="qrModal">
   <div class="modal-box">
     <h2>📲 Scan QR to Pay</h2>
-    <img src="qr.png" class="qr-img">
+    <img src="qr.png" class="qr-img" alt="QR Pay">
     <button class="btn outline" onclick="closeQR()">Done</button>
   </div>
 </div>
@@ -223,14 +183,18 @@ function openPackage(app, appName) {
   list.innerHTML = "";
 
   prices[app].forEach(pkg => {
-    const link = paymentLinks[app][pkg.name];
+    const link = paymentLinks[app]?.[pkg.name] || "#";
+
     list.innerHTML += `
       <li>
-        ${pkg.name} — <strong>${pkg.price}</strong>
-        <button class="btn small" onclick="window.location.href='${link}'">
+        ${pkg.name}
+        <strong>${pkg.price}</strong>
+        <button class="btn small"
+          onclick="${link !== '#' ? `window.location.href='${link}'` : `alert('Payment link not available')`}">
           Pay Now
         </button>
-      </li>`;
+      </li>
+    `;
   });
 }
 
