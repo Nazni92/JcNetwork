@@ -8,56 +8,70 @@
 </head>
 <body>
 
+<!-- ================= BANNER ================= -->
 <section class="banner">
   <img src="banner7.png" alt="JC Mobile Banner">
 </section>
 
+<!-- ================= APPS ================= -->
 <section class="container">
 
+  <!-- KING TV -->
   <div class="app-card">
     <img src="logo1.png" alt="King TV">
     <h2>King TV</h2>
     <p>Live TV, Movies & Sports</p>
     <a href="https://cutt.ly/king200" class="btn" target="_blank">⬇ Download App</a>
-    <button class="btn" onclick="openPackage('KINGTV')">📦 View Packages</button>
+    <button class="btn" onclick="openPackage('KINGTV','King TV')">📦 View Packages</button>
     <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
+  <!-- PANDAFLIX -->
   <div class="app-card">
     <img src="logo2.png" alt="PandaFlix">
     <h2>PandaFlix</h2>
     <p>OTT Premium IPTV</p>
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
-    <button class="btn" onclick="openPackage('PANDAFLIX')">📦 View Packages</button>
+    <button class="btn" onclick="openPackage('PANDAFLIX','PandaFlix')">📦 View Packages</button>
     <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
+  <!-- TVTECH PRO -->
   <div class="app-card">
     <img src="logo4.png" alt="TVTech Pro">
     <h2>TVTech Pro</h2>
     <p>OTT IPTV Premium</p>
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
-    <button class="btn" onclick="openPackage('TVTECHPRO')">📦 View Packages</button>
+    <button class="btn" onclick="openPackage('TVTECHPRO','TVTech Pro')">📦 View Packages</button>
     <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
 </section>
 
+<!-- ================= PAYMENT ================= -->
 <section class="payment">
   <h2>💳 Payment Method</h2>
   <div class="payment-box">
+
     <a href="https://toyyibpay.com/JC-Mobile" class="payment-btn toyyibpay" target="_blank">
       💳 Pay via ToyyibPay
       <span>Online Banking • Card • E-Wallet</span>
     </a>
+
     <a href="https://wa.me/60179290815" class="payment-btn whatsapp" target="_blank">
       💬 Pay via WhatsApp
       <span>Manual Transfer</span>
     </a>
-    <button class="payment-btn qr" onclick="openQR()">📱 Scan QR Pay<span>Instant Payment</span></button>
+
+    <button class="payment-btn qr" onclick="openQR()">
+      📱 Scan QR Pay
+      <span>Instant Payment</span>
+    </button>
+
   </div>
 </section>
 
+<!-- ================= RESELLER ================= -->
 <section class="reseller">
   <h2>🤝 Become a Reseller</h2>
   <p>Earn income by selling our IPTV</p>
@@ -66,6 +80,7 @@
   </a>
 </section>
 
+<!-- ================= HOURS ================= -->
 <section class="hours">
   <h2>🕘 Operation Hours</h2>
   <p>Daily • 9:00 AM – 11:00 PM</p>
@@ -73,9 +88,11 @@
 
 <footer>© 2026 JC Mobile Shop — All Rights Reserved</footer>
 
+<!-- ================= FLOATING ================= -->
 <a href="https://wa.me/60179290815" class="floating-whatsapp" target="_blank">💬</a>
 <a href="https://t.me/jcmobileapps" class="floating-telegram" target="_blank">✈️</a>
 
+<!-- ================= PACKAGE MODAL ================= -->
 <div class="modal" id="packageModal">
   <div class="modal-box">
     <h2 id="appTitle"></h2>
@@ -84,6 +101,7 @@
   </div>
 </div>
 
+<!-- ================= QR MODAL ================= -->
 <div class="modal" id="qrModal">
   <div class="modal-box">
     <h2>📲 Scan QR to Pay</h2>
@@ -92,7 +110,9 @@
   </div>
 </div>
 
+<!-- ================= SCRIPT ================= -->
 <script>
+/* ===== ToyyibPay Links ===== */
 const paymentLinks = {
   KINGTV: {
     "1 Month": "https://toyyibpay.com/JC-Mobile-King15",
@@ -119,6 +139,7 @@ const paymentLinks = {
   }
 };
 
+/* ===== Prices ===== */
 const prices = {
   KINGTV: [
     { name: "1 Month", price: "RM15" },
@@ -145,24 +166,27 @@ const prices = {
   ]
 };
 
-function openPackage(app) {
+function openPackage(app, appName) {
+  localStorage.setItem("paidApp", appName);
   document.getElementById("packageModal").style.display = "flex";
-  document.getElementById("appTitle").innerText = app + " Packages";
+  document.getElementById("appTitle").innerText = appName + " Packages";
+
   const list = document.getElementById("priceList");
   list.innerHTML = "";
 
   prices[app].forEach(pkg => {
-    const link = paymentLinks[app][pkg.name];
     list.innerHTML += `
       <li>
         ${pkg.name} — <strong>${pkg.price}</strong>
-        <button class="btn small" onclick="payNow('${link}','${app}','${pkg.name}')">Pay Now</button>
+        <button class="btn small"
+          onclick="payNow('${paymentLinks[app][pkg.name]}','${pkg.name}')">
+          Pay Now
+        </button>
       </li>`;
   });
 }
 
-function payNow(link, app, pkg) {
-  localStorage.setItem("paidApp", app);
+function payNow(link, pkg) {
   localStorage.setItem("paidPackage", pkg);
   window.location.href = link;
 }
