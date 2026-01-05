@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>JC Mobile Shop | IPTV Premium</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>JC Mobile Shop | IPTV & Mobile Service</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <!-- ================= BANNER ================= -->
 <section class="banner">
-  <img src="banner4.png" alt="JC Mobile IPTV">
+  <img src="banner4.png" alt="JC Mobile Banner">
 </section>
 
 <!-- ================= APPS ================= -->
@@ -21,41 +20,55 @@
   <div class="app-card">
     <img src="logo1.png" alt="King TV">
     <h2>King TV</h2>
-    <p>Live TV • Sports • Movies</p>
+    <p>Live TV, Movies & Sports</p>
 
-    <a href="https://cutt.ly/king200" class="btn">⬇ Download</a>
-    <button class="btn darkred" onclick="openPackage('KINGTV')">📦 View Packages</button>
+    <a href="https://cutt.ly/king200" class="btn" target="_blank">⬇ Download App</a>
+    <button class="btn" onclick="openPackage('KINGTV')">📦 View Packages</button>
+    <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq"
+       class="btn outline" target="_blank">
+      📞 Support Group
+    </a>
   </div>
 
-  <!-- PANDAFLIX (RED GLASS) -->
-  <div class="app-card pandaflix">
+  <!-- PANDAFLIX -->
+  <div class="app-card">
     <img src="logo2.png" alt="PandaFlix">
     <h2>PandaFlix</h2>
-    <p>Premium OTT IPTV</p>
+    <p>OTT Premium IPTV</p>
 
-    <a href="https://link2u.cc/tvtech" class="btn">⬇ Download</a>
-    <button class="btn darkred" onclick="openPackage('PANDAFLIX')">📦 View Packages</button>
+    <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
+    <button class="btn" onclick="openPackage('PANDAFLIX')">📦 View Packages</button>
+    <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha"
+       class="btn outline" target="_blank">
+      📞 Support Group
+    </a>
   </div>
 
   <!-- TVTECH PRO -->
   <div class="app-card">
     <img src="logo4.png" alt="TVTech Pro">
     <h2>TVTech Pro</h2>
-    <p>OTT Navigator IPTV</p>
+    <p>OTT IPTV Premium</p>
 
-    <a href="https://link2u.cc/tvtech" class="btn">⬇ Download</a>
-    <button class="btn darkred" onclick="openPackage('TVTECHPRO')">📦 View Packages</button>
+    <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
+    <button class="btn" onclick="openPackage('TVTECHPRO')">📦 View Packages</button>
+    <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR"
+       class="btn outline" target="_blank">
+      📞 Support Group
+    </a>
   </div>
 
 </section>
 
-<!-- ================= PAYMENT ================= -->
+<!-- ================= BIG PAYMENT ================= -->
 <section class="payment">
   <h2>💳 Payment Method</h2>
 
   <div class="payment-box">
-    <a href="https://wa.me/60179290815" class="payment-btn whatsapp" target="_blank">
-      💬 WhatsApp Payment
+    <a href="https://wa.me/60179290815"
+       class="payment-btn whatsapp"
+       target="_blank">
+      💬 Pay via WhatsApp
       <span>Online Transfer / E-Wallet</span>
     </a>
 
@@ -66,21 +79,43 @@
   </div>
 </section>
 
+<!-- ================= RESELLER ================= -->
+<section class="reseller">
+  <h2>🤝 Become a Reseller</h2>
+  <p>Earn income by selling our IPTV</p>
+
+  <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller"
+     class="btn reseller-btn"
+     target="_blank">
+    💼 I Want to Be a Reseller
+  </a>
+</section>
+
 <!-- ================= HOURS ================= -->
 <section class="hours">
   <h2>🕘 Operation Hours</h2>
   <p>Daily • 9:00 AM – 11:00 PM</p>
 </section>
 
+<!-- ================= FOOTER ================= -->
 <footer>
-© 2026 JC Mobile Shop — Premium IPTV Seller
+  © 2026 JC Mobile Shop — All Rights Reserved
 </footer>
 
-<!-- ================= FLOATING BUTTONS ================= -->
-<a href="https://wa.me/60179290815" class="floating-whatsapp" target="_blank">💬</a>
+<!-- ================= FLOATING WHATSAPP ================= -->
+<a href="https://wa.me/60179290815"
+   class="floating-whatsapp"
+   target="_blank"
+   title="Chat on WhatsApp">
+  💬
+</a>
 
-<a href="https://t.me/jcmobileapps" class="floating-telegram" target="_blank">
-  <img src="telegram.svg" alt="Telegram">
+<!-- ================= FLOATING TELEGRAM ================= -->
+<a href="https://t.me/jcmobileapps"
+   class="floating-telegram"
+   target="_blank"
+   title="Chat on Telegram">
+  ✈️
 </a>
 
 <!-- ================= PACKAGE MODAL ================= -->
@@ -95,58 +130,85 @@
 <!-- ================= QR MODAL ================= -->
 <div class="modal" id="qrModal">
   <div class="modal-box">
-    <h2>Scan QR to Pay</h2>
-    <img src="qr.png" class="qr-img">
+    <h2>📲 Scan QR to Pay</h2>
+    <img src="qr.png" class="qr-img" alt="QR Payment">
     <button class="btn outline" onclick="closeQR()">Done</button>
   </div>
 </div>
 
+<!-- ================= SCRIPT ================= -->
 <script>
-const ADMIN = "60179290815";
+const ADMIN_WA = "60179290815";
 
 const prices = {
   KINGTV: [
-    ["1 Month","RM15"],
-    ["3 Months","RM38"],
-    ["6 Months","RM70"],
-    ["1 Year","RM110"]
+    { name: "1 Month", price: "RM15" },
+    { name: "3 Months", price: "RM38" },
+    { name: "6 Months", price: "RM70" },
+    { name: "1 Year", price: "RM110" },
+    { name: "4 Years", price: "RM300" }
   ],
   PANDAFLIX: [
-    ["1 Month","RM10"],
-    ["3 Months","RM28"],
-    ["6 Months","RM55"],
-    ["1 Year","RM100"]
+    { name: "1 Month", price: "RM10" },
+    { name: "3 Months", price: "RM28" },
+    { name: "6 Months", price: "RM55" },
+    { name: "1 Year", price: "RM100" }
   ],
   TVTECHPRO: [
-    ["1 Device • 1 Month","RM12"],
-    ["1 Device • 3 Months","RM35"],
-    ["1 Device • 6 Months","RM60"],
-    ["2 Devices • 1 Month","RM20"],
-    ["2 Devices • 3 Months","RM55"]
+    { name: "1 Device • 1 Month", price: "RM12" },
+    { name: "1 Device • 3 Months", price: "RM35" },
+    { name: "1 Device • 6 Months", price: "RM60" },
+    { name: "1 Device • 1 Year", price: "RM110" },
+    { name: "2 Devices • 1 Month", price: "RM20" },
+    { name: "2 Devices • 3 Months", price: "RM55" },
+    { name: "2 Devices • 6 Months", price: "RM105" },
+    { name: "2 Devices • 1 Year", price: "RM200" }
   ]
 };
 
-function openPackage(app){
-  document.getElementById("packageModal").style.display="flex";
-  document.getElementById("appTitle").innerText=app+" Packages";
-  const list=document.getElementById("priceList");
-  list.innerHTML="";
-  prices[app].forEach(p=>{
-    const li=document.createElement("li");
-    li.innerHTML=`${p[0]} <b>${p[1]}</b>
-    <button class="btn small" onclick="order('${app}','${p[0]}','${p[1]}')">Order</button>`;
+function openPackage(app) {
+  document.getElementById("packageModal").style.display = "flex";
+  document.getElementById("appTitle").innerText = app + " Packages";
+
+  const list = document.getElementById("priceList");
+  list.innerHTML = "";
+
+  prices[app].forEach(pkg => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+      ${pkg.name} — <strong>${pkg.price}</strong>
+      <button class="btn small"
+        onclick="orderNow('${app}','${pkg.name}','${pkg.price}')">
+        Order
+      </button>
+    `;
     list.appendChild(li);
   });
 }
 
-function order(app,pkg,price){
-  const msg=`Hi Admin,%0AOrder:%0A${app}%0A${pkg}%0A${price}`;
-  window.open(`https://wa.me/${ADMIN}?text=${msg}`,"_blank");
+function orderNow(app, pkg, price) {
+  const msg =
+    `Hi Admin,%0A%0A` +
+    `I want to order:%0A` +
+    `📺 App: ${app}%0A` +
+    `📦 Package: ${pkg}%0A` +
+    `💰 Price: ${price}%0A%0A` +
+    `Thank you.`;
+
+  window.open(`https://wa.me/${ADMIN_WA}?text=${msg}`, "_blank");
 }
 
-function closePackage(){document.getElementById("packageModal").style.display="none";}
-function openQR(){document.getElementById("qrModal").style.display="flex";}
-function closeQR(){document.getElementById("qrModal").style.display="none";}
+function closePackage() {
+  document.getElementById("packageModal").style.display = "none";
+}
+
+function openQR() {
+  document.getElementById("qrModal").style.display = "flex";
+}
+
+function closeQR() {
+  document.getElementById("qrModal").style.display = "none";
+}
 </script>
 
 </body>
