@@ -17,24 +17,15 @@
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
-a,
-button {
+a {
   text-decoration: none;
-  outline: none !important;
-  border: none;
   -webkit-tap-highlight-color: transparent;
-}
-
-button:focus,
-a:focus {
-  outline: none !important;
 }
 
 body {
   background: radial-gradient(circle at top, #111, #000);
   color: #fff;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 /* ================= BANNER ================= */
@@ -61,12 +52,12 @@ body {
   padding: 28px;
   text-align: center;
   border: 1px solid rgba(212,175,55,0.35);
-  box-shadow: 0 0 30px rgba(212,175,55,0.25);
+  box-shadow: 0 0 30px rgba(212,175,55,0.2);
   transition: 0.35s ease;
 }
 
 .app-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   box-shadow: 0 0 45px rgba(212,175,55,0.6);
 }
 
@@ -93,29 +84,32 @@ body {
   display: inline-block;
   padding: 12px 22px;
   border-radius: 30px;
+  border: none;
   cursor: pointer;
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   color: #000;
   font-weight: 700;
-  transition: 0.3s ease;
+  transition: 0.3s;
   box-shadow:
     0 0 18px var(--gold-glow),
     inset 0 0 10px rgba(255,255,255,0.25);
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.06);
 }
 
-/* VIEW PACKAGE */
+/* VIEW PACKAGE (RED) */
 button.btn {
   background: linear-gradient(135deg, #700000, #140000);
   color: #fff;
+  border: 1px solid rgba(255,80,80,0.5);
   box-shadow:
-    0 0 28px rgba(255,0,0,0.75),
+    0 0 25px rgba(255,0,0,0.7),
     inset 0 0 12px rgba(255,80,80,0.3);
 }
 
+/* OUTLINE */
 .btn.outline {
   background: transparent;
   border: 1px solid var(--gold);
@@ -139,7 +133,7 @@ button.btn {
   font-size: 22px;
   color: var(--gold);
   margin-bottom: 25px;
-  text-shadow: 0 0 14px var(--gold-glow);
+  text-shadow: 0 0 12px var(--gold-glow);
 }
 
 .payment-box {
@@ -149,18 +143,20 @@ button.btn {
   flex-wrap: wrap;
 }
 
-/* PAYMENT BUTTON BASE */
+/* PAYMENT BUTTON */
 .payment-btn {
   width: 300px;
   padding: 22px;
-  border-radius: 22px;
+  border-radius: 20px;
   font-size: 18px;
   font-weight: 800;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: 0.35s ease;
-  overflow: hidden;
+  transition: 0.35s;
+  box-shadow:
+    0 0 25px rgba(212,175,55,0.55),
+    inset 0 0 12px rgba(255,255,255,0.15);
 }
 
 .payment-btn span {
@@ -169,35 +165,83 @@ button.btn {
   opacity: 0.9;
 }
 
-/* TOYYIBPAY – RED NEON */
+/* PAYMENT NEON COLORS */
 .payment-btn.toyyibpay {
-  background: linear-gradient(135deg, #8b0000, #2a0000);
+  background: linear-gradient(135deg, #700000, #140000);
   color: #fff;
-  box-shadow:
-    0 0 40px rgba(255,0,0,0.95),
-    inset 0 0 18px rgba(255,90,90,0.35);
+  box-shadow: 0 0 35px rgba(255,0,0,0.85);
 }
 
-/* WHATSAPP – GREEN NEON */
 .payment-btn.whatsapp {
-  background: linear-gradient(135deg, #25D366, #128c4a);
+  background: linear-gradient(135deg, #25D366, #1ebe5d);
   color: #fff;
-  box-shadow:
-    0 0 40px rgba(37,211,102,1),
-    inset 0 0 18px rgba(255,255,255,0.3);
+  box-shadow: 0 0 35px rgba(37,211,102,0.9);
 }
 
-/* QR – GOLD NEON */
 .payment-btn.qr {
   background: linear-gradient(135deg, var(--gold), var(--gold-light));
   color: #000;
-  box-shadow:
-    0 0 40px var(--gold-glow),
-    inset 0 0 18px rgba(255,255,255,0.4);
+  box-shadow: 0 0 35px var(--gold-glow);
 }
 
 .payment-btn:hover {
   transform: translateY(-6px) scale(1.05);
+}
+
+/* ================= CUSTOMER REVIEWS ================= */
+.reviews {
+  padding: 70px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, #0d0d0d, #000);
+  border-top: 1px solid rgba(212,175,55,0.25);
+}
+
+.reviews h2 {
+  color: var(--gold);
+  font-size: 22px;
+  margin-bottom: 8px;
+  text-shadow: 0 0 12px var(--gold-glow);
+}
+
+.review-sub {
+  font-size: 15px;
+  opacity: 0.85;
+  margin-bottom: 35px;
+}
+
+.review-box {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.review-card {
+  background: linear-gradient(180deg, rgba(20,20,20,0.95), rgba(0,0,0,0.98));
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid rgba(212,175,55,0.35);
+  box-shadow: 0 0 25px rgba(212,175,55,0.25);
+  transition: 0.35s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px rgba(212,175,55,0.55);
+}
+
+.review-text {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.review-name {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
 }
 
 /* ================= RESELLER & HOURS ================= */
@@ -237,10 +281,11 @@ footer {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.92);
+  background: rgba(0,0,0,0.9);
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  padding: 10px;
 }
 
 .modal-box {
@@ -249,10 +294,45 @@ footer {
   border-radius: 18px;
   width: 100%;
   max-width: 420px;
+  max-height: 85vh;
+  overflow-y: auto;
   border: 1px solid rgba(212,175,55,0.35);
 }
 
-/* ================= FLOATING BUTTONS ================= */
+.modal-box h2 {
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+#priceList {
+  list-style: none;
+}
+
+#priceList li {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,175,55,0.25);
+  border-radius: 12px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+#priceList strong {
+  color: var(--gold);
+}
+
+/* QR */
+.qr-img {
+  width: 220px;
+  display: block;
+  margin: 25px auto;
+}
+
+/* ================= FLOATING ================= */
 .floating-whatsapp,
 .floating-telegram {
   position: fixed;
@@ -265,20 +345,18 @@ footer {
   justify-content: center;
   font-size: 26px;
   z-index: 999;
-  outline: none !important;
-  -webkit-tap-highlight-color: transparent;
 }
 
 .floating-whatsapp {
   bottom: 20px;
   background: #25D366;
-  box-shadow: 0 0 30px rgba(37,211,102,1);
+  box-shadow: 0 0 25px rgba(37,211,102,0.9);
 }
 
 .floating-telegram {
   bottom: 90px;
   background: linear-gradient(135deg, #229ED9, #1c88c7);
-  box-shadow: 0 0 30px rgba(34,158,217,1);
+  box-shadow: 0 0 25px rgba(34,158,217,0.9);
 }
 
 /* ================= MOBILE ================= */
@@ -286,5 +364,19 @@ footer {
   .btn,
   .payment-btn {
     width: 100%;
+  }
+
+  .payment h2 {
+    font-size: 18px;
+  }
+
+  footer {
+    font-size: 13px;
+  }
+
+  #priceList li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 }
