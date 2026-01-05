@@ -53,12 +53,16 @@
   <h2>💳 Payment Method</h2>
   <div class="payment-box">
 
-    <a href="https://toyyibpay.com/JC-Mobile" class="payment-btn toyyibpay" target="_blank">
+    <a href="https://toyyibpay.com/JC-Mobile"
+       class="payment-btn toyyibpay"
+       target="_blank">
       💳 Pay via ToyyibPay
       <span>Online Banking • Card • E-Wallet</span>
     </a>
 
-    <a href="https://wa.me/60179290815" class="payment-btn whatsapp" target="_blank">
+    <a href="https://wa.me/60179290815"
+       class="payment-btn whatsapp"
+       target="_blank">
       💬 Pay via WhatsApp
       <span>Manual Transfer</span>
     </a>
@@ -75,7 +79,9 @@
 <section class="reseller">
   <h2>🤝 Become a Reseller</h2>
   <p>Earn income by selling our IPTV</p>
-  <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller" class="btn" target="_blank">
+  <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller"
+     class="btn"
+     target="_blank">
     💼 I Want to Be a Reseller
   </a>
 </section>
@@ -112,7 +118,7 @@
 
 <!-- ================= SCRIPT ================= -->
 <script>
-/* ===== ToyyibPay Links ===== */
+/* ===== TOYYIBPAY LINKS ===== */
 const paymentLinks = {
   KINGTV: {
     "1 Month": "https://toyyibpay.com/JC-Mobile-King15",
@@ -139,7 +145,7 @@ const paymentLinks = {
   }
 };
 
-/* ===== Prices ===== */
+/* ===== PRICES ===== */
 const prices = {
   KINGTV: [
     { name: "1 Month", price: "RM15" },
@@ -175,11 +181,11 @@ function openPackage(app, appName) {
   list.innerHTML = "";
 
   prices[app].forEach(pkg => {
+    const link = paymentLinks[app][pkg.name];
     list.innerHTML += `
       <li>
         ${pkg.name} — <strong>${pkg.price}</strong>
-        <button class="btn small"
-          onclick="payNow('${paymentLinks[app][pkg.name]}','${pkg.name}')">
+        <button class="btn small" onclick="payNow('${link}','${pkg.name}')">
           Pay Now
         </button>
       </li>`;
@@ -191,9 +197,9 @@ function payNow(link, pkg) {
   window.location.href = link;
 }
 
-function closePackage(){document.getElementById("packageModal").style.display="none";}
-function openQR(){document.getElementById("qrModal").style.display="flex";}
-function closeQR(){document.getElementById("qrModal").style.display="none";}
+function closePackage(){ document.getElementById("packageModal").style.display="none"; }
+function openQR(){ document.getElementById("qrModal").style.display="flex"; }
+function closeQR(){ document.getElementById("qrModal").style.display="none"; }
 </script>
 
 </body>
