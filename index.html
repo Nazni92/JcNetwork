@@ -54,13 +54,23 @@
 
 </section>
 
-<!-- ================= PAYMENT ================= -->
+<!-- ================= BIG PAYMENT ================= -->
 <section class="payment">
   <h2>💳 Payment Method</h2>
-  <a href="https://wa.me/60179290815" class="btn" target="_blank">
-    💬 Online Payment (WhatsApp)
-  </a>
-  <button class="btn" onclick="openQR()">📱 QR Pay</button>
+
+  <div class="payment-box">
+    <a href="https://wa.me/60179290815"
+       class="payment-btn whatsapp"
+       target="_blank">
+      💬 Pay via WhatsApp
+      <span>Online Transfer / E-Wallet</span>
+    </a>
+
+    <button class="payment-btn qr" onclick="openQR()">
+      📱 Scan QR Pay
+      <span>Instant Payment</span>
+    </button>
+  </div>
 </section>
 
 <!-- ================= RESELLER ================= -->
@@ -68,7 +78,8 @@
   <h2>🤝 Become a Reseller</h2>
   <p>Earn income by selling our IPTV</p>
   <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller"
-     class="btn reseller-btn" target="_blank">
+     class="btn reseller-btn"
+     target="_blank">
     💼 I Want to Be a Reseller
   </a>
 </section>
@@ -151,6 +162,7 @@ const prices = {
 function openPackage(app) {
   document.getElementById("packageModal").style.display = "flex";
   document.getElementById("appTitle").innerText = app + " Packages";
+
   const list = document.getElementById("priceList");
   list.innerHTML = "";
 
@@ -160,13 +172,20 @@ function openPackage(app) {
       ${pkg.name} — <strong>${pkg.price}</strong>
       <button class="btn small" onclick="orderNow('${app}','${pkg.name}','${pkg.price}')">
         Order
-      </button>`;
+      </button>
+    `;
     list.appendChild(li);
   });
 }
 
 function orderNow(app, pkg, price) {
-  const msg = `Hi Admin,%0A%0AI want to order:%0A📺 App: ${app}%0A📦 Package: ${pkg}%0A💰 Price: ${price}%0A%0AThank you.`;
+  const msg =
+    `Hi Admin,%0A%0A` +
+    `I want to order:%0A` +
+    `📺 App: ${app}%0A` +
+    `📦 Package: ${pkg}%0A` +
+    `💰 Price: ${price}%0A%0A` +
+    `Thank you.`;
   window.open(`https://wa.me/${ADMIN_WA}?text=${msg}`, "_blank");
 }
 
