@@ -6,9 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body{
   background:#000;
@@ -53,6 +51,11 @@ p{
   padding:12px;
   font-size:13px;
   color:#bbb;
+  text-align:left;
+}
+
+.details div{
+  margin:6px 0;
 }
 
 .btn{
@@ -94,7 +97,7 @@ p{
     <div><strong>ToyyibPay Ref:</strong> <span id="billRef">-</span></div>
   </div>
 
-  <a id="waLink" class="btn" target="_blank">
+  <a id="waLink" class="btn" target="_blank" rel="noopener">
     📩 Send Payment Details
   </a>
 
@@ -104,37 +107,46 @@ p{
 </div>
 
 <script>
-// Read saved order info
-const app = localStorage.getItem("paidApp") || "Not specified";
-const pkg = localStorage.getItem("paidPackage") || "Not specified";
+  // CHANGE this to your WhatsApp number (international format, no "+")
+  const ADMIN_WA = "60179290815";
 
-// Get ToyyibPay reference (?billcode=XXXX)
-const params = new URLSearchParams(window.location.search);
-const billcode = params.get("billcode") || "Not provided";
+  // Read saved order info from index.html
+  const app = localStorage.getItem("paidApp") || "Not specified";
+  const pkg = localStorage.getItem("paidPackage") || "Not specified";
 
-// Show on page
-document.getElementById("appName").innerText = app;
-document.getElementById("pkgName").innerText = pkg;
-document.getElementById("billRef").innerText = billcode;
+  // ToyyibPay may return different param names depending on your setup
+  const params = new URLSearchParams(window.location.search);
+  const billcode =
+    params.get("billcode") ||
+    params.get("refno") ||
+    params.get("transaction_id") ||
+    params.get("order_id") ||
+    "Not provided";
 
-// WhatsApp message
-const msg =
-`Hi Admin,%0A%0A` +
-`✅ Payment Successful%0A` +
-`📺 App: ${app}%0A` +
-`📦 Package: ${pkg}%0A` +
-`🧾 ToyyibPay Ref: ${billcode}%0A%0A` +
-`Please activate my service. Thank you.`;
+  // Show on page
+  document.getElementById("appName").innerText = app;
+  document.getElementById("pkgName").innerText = pkg;
+  document.getElementById("billRef").innerText = billcode;
 
-// WhatsApp link
-document.getElementById("waLink").href =
-`https://wa.me/60179290815?text=${msg}`;
+  // Build WhatsApp message safely
+  const msg = `Hi Admin,
 
-// Optional: clear data after load (safe)
-setTimeout(() => {
-  localStorage.removeItem("paidApp");
-  localStorage.removeItem("paidPackage");
-}, 5000);
+✅ Payment Successful
+📺 App: ${app}
+📦 Package: ${pkg}
+🧾 ToyyibPay Ref: ${billcode}
+
+Please activate my service. Thank you.`;
+
+  // WhatsApp link (encoded)
+  document.getElementById("waLink").href =
+    `https://wa.me/${ADMIN_WA}?text=` + encodeURIComponent(msg);
+
+  // Optional: clear saved values so next visit is clean
+  setTimeout(() => {
+    localStorage.removeItem("paidApp");
+    localStorage.removeItem("paidPackage");
+  }, 5000);
 </script>
 
 </body>
