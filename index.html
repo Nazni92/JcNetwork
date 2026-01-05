@@ -21,11 +21,10 @@
     <img src="logo1.png" alt="King TV">
     <h2>King TV</h2>
     <p>Live TV, Movies & Sports</p>
-
     <a href="https://cutt.ly/king200" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('KINGTV')">📦 View Packages</button>
     <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" class="btn outline" target="_blank">
-      📞 King TV Support Group
+      📞 Support Group
     </a>
   </div>
 
@@ -34,11 +33,10 @@
     <img src="logo2.png" alt="PandaFlix">
     <h2>PandaFlix</h2>
     <p>OTT Premium IPTV</p>
-
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('PANDAFLIX')">📦 View Packages</button>
     <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" class="btn outline" target="_blank">
-      📞 PandaFlix Support Group
+      📞 Support Group
     </a>
   </div>
 
@@ -47,11 +45,10 @@
     <img src="logo4.png" alt="TVTech Pro">
     <h2>TVTech Pro</h2>
     <p>OTT IPTV Premium</p>
-
     <a href="https://link2u.cc/tvtech" class="btn" target="_blank">⬇ Download App</a>
     <button class="btn" onclick="openPackage('TVTECHPRO')">📦 View Packages</button>
     <a href="https://chat.whatsapp.com/LudvvyQEkNYA8G1GemjBCR" class="btn outline" target="_blank">
-      📞 TVTech Pro Support Group
+      📞 Support Group
     </a>
   </div>
 
@@ -70,43 +67,13 @@
 <section class="reseller">
   <h2>🤝 Become a Reseller</h2>
   <p>Earn income by selling our IPTV</p>
-
   <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller"
-     class="btn reseller-btn"
-     target="_blank">
+     class="btn reseller-btn" target="_blank">
     💼 I Want to Be a Reseller
   </a>
 </section>
 
-<!-- ================= TESTIMONIALS ================= -->
-<section class="testimonials">
-  <h2>⭐ Customer Reviews</h2>
-
-  <div class="review-grid">
-    <div class="review-card">
-      <div class="review-text">
-        Very stable KingTV, clear HD channels. Been using more than 6 months already 👍
-      </div>
-      <div class="review-user">— Lee Chong, Malaysia 🇲🇾</div>
-    </div>
-
-    <div class="review-card">
-      <div class="review-text">
-        Fast response admin, easy setup on Android Box. Worth the price!
-      </div>
-      <div class="review-user">— Siti, Brunei 🇧🇳</div>
-    </div>
-
-    <div class="review-card">
-      <div class="review-text">
-        Sports channels smooth, no lag during live matches. Recommended seller.
-      </div>
-      <div class="review-user">— Daniel Lo, Singapore 🇸🇬</div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= OPERATION HOURS ================= -->
+<!-- ================= HOURS ================= -->
 <section class="hours">
   <h2>🕘 Operation Hours</h2>
   <p>Daily • 9:00 AM – 11:00 PM</p>
@@ -121,8 +88,16 @@
 <a href="https://wa.me/60179290815"
    class="floating-whatsapp"
    target="_blank"
-   title="Chat with Admin on WhatsApp">
+   title="Chat on WhatsApp">
   💬
+</a>
+
+<!-- ================= FLOATING TELEGRAM ================= -->
+<a href="https://t.me/jcmobileapps"
+   class="floating-telegram"
+   target="_blank"
+   title="Chat on Telegram">
+  ✈️
 </a>
 
 <!-- ================= PACKAGE MODAL ================= -->
@@ -145,6 +120,8 @@
 
 <!-- ================= SCRIPT ================= -->
 <script>
+const ADMIN_WA = "60179290815";
+
 const prices = {
   KINGTV: [
     { name: "1 Month", price: "RM15" },
@@ -176,11 +153,21 @@ function openPackage(app) {
   document.getElementById("appTitle").innerText = app + " Packages";
   const list = document.getElementById("priceList");
   list.innerHTML = "";
+
   prices[app].forEach(pkg => {
     const li = document.createElement("li");
-    li.innerHTML = `${pkg.name} — <strong>${pkg.price}</strong>`;
+    li.innerHTML = `
+      ${pkg.name} — <strong>${pkg.price}</strong>
+      <button class="btn small" onclick="orderNow('${app}','${pkg.name}','${pkg.price}')">
+        Order
+      </button>`;
     list.appendChild(li);
   });
+}
+
+function orderNow(app, pkg, price) {
+  const msg = `Hi Admin,%0A%0AI want to order:%0A📺 App: ${app}%0A📦 Package: ${pkg}%0A💰 Price: ${price}%0A%0AThank you.`;
+  window.open(`https://wa.me/${ADMIN_WA}?text=${msg}`, "_blank");
 }
 
 function closePackage() {
