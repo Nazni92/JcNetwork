@@ -1,3 +1,7 @@
+/* =================================================
+   JC MOBILE SERVICE – NEON BLACK GOLD PREMIUM THEME
+   ================================================= */
+
 /* ================= ROOT ================= */
 :root {
   --gold: #d4af37;
@@ -17,8 +21,7 @@
 }
 
 body {
-  background:
-    radial-gradient(circle at top, #111, #000);
+  background: radial-gradient(circle at top, #111, #000);
   color: #fff;
   line-height: 1.6;
 }
@@ -61,8 +64,11 @@ body {
 
 /* ================= APP CARD ================= */
 .app-card {
-  background:
-    linear-gradient(180deg, rgba(20,20,20,0.9), rgba(0,0,0,0.95));
+  background: linear-gradient(
+    180deg,
+    rgba(20,20,20,0.9),
+    rgba(0,0,0,0.95)
+  );
   border-radius: 20px;
   padding: 28px;
   text-align: center;
@@ -162,11 +168,24 @@ button.btn:hover {
   border-top: 1px solid rgba(212,175,55,0.2);
 }
 
+/* 🔽 SMALLER, PREMIUM TITLE */
 .payment h2 {
-  font-size: 30px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  margin-bottom: 25px;
   color: var(--gold);
-  text-shadow: 0 0 12px var(--gold-glow);
-  margin-bottom: 35px;
+  text-shadow: 0 0 10px var(--gold-glow);
+  position: relative;
+}
+
+.payment h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 12px auto 0;
 }
 
 .payment-box {
@@ -330,6 +349,10 @@ footer {
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 600px) {
+  .payment h2 {
+    font-size: 20px;
+  }
+
   .btn {
     width: 100%;
   }
