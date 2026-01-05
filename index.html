@@ -16,6 +16,7 @@
 <!-- ================= APPS ================= -->
 <section class="container">
 
+  <!-- KING TV -->
   <div class="app-card">
     <img src="logo1.png" alt="King TV">
     <h2>King TV</h2>
@@ -25,6 +26,7 @@
     <a href="https://chat.whatsapp.com/DpjGNkWcfjH5WE4sVk81Rq" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
+  <!-- PANDAFLIX -->
   <div class="app-card">
     <img src="logo2.png" alt="PandaFlix">
     <h2>PandaFlix</h2>
@@ -34,6 +36,7 @@
     <a href="https://chat.whatsapp.com/ETyV1wTMDfnEA7XP9ybqha" class="btn outline" target="_blank">📞 Support Group</a>
   </div>
 
+  <!-- TVTECH PRO -->
   <div class="app-card">
     <img src="logo4.png" alt="TVTech Pro">
     <h2>TVTech Pro</h2>
@@ -50,12 +53,16 @@
   <h2>💳 Payment Method</h2>
   <div class="payment-box">
 
-    <a href="https://toyyibpay.com/JC-Mobile" class="payment-btn toyyibpay" target="_blank">
+    <a href="https://toyyibpay.com/JC-Mobile"
+       class="payment-btn toyyibpay"
+       target="_blank">
       💳 Pay via ToyyibPay
       <span>Online Banking • Card • E-Wallet</span>
     </a>
 
-    <a href="https://wa.me/60179290815" class="payment-btn whatsapp" target="_blank">
+    <a href="https://wa.me/60179290815"
+       class="payment-btn whatsapp"
+       target="_blank">
       💬 Pay via WhatsApp
       <span>Manual Transfer</span>
     </a>
@@ -68,51 +75,48 @@
   </div>
 </section>
 
-<!-- ================= REVIEWS ================= -->
+<!-- ================= CUSTOMER REVIEWS ================= -->
 <section class="reviews">
-  <h2>⭐ Trusted by Customers Worldwide</h2>
+  <h2>⭐ Customer Reviews</h2>
+  <p class="review-sub">Trusted by customers across Asia</p>
 
   <div class="review-box">
+
     <div class="review-card">
-      <img src="https://flagcdn.com/16x12/my.png">
-      <p>"Very stable IPTV, many channels. Support very fast 👍"</p>
-      <span>— Nguyen (Vietnam)</span>
+      <p class="review-text">
+        “Very stable IPTV, HD quality and fast support. Best service I used so far.”
+      </p>
+      <span class="review-name">— Minh T.</span>
     </div>
 
     <div class="review-card">
-      <img src="https://flagcdn.com/16x12/my.png">
-      <p>"HD sports, smooth streaming. Worth every ringgit."</p>
-      <span>— Somchai (Thailand)</span>
+      <p class="review-text">
+        “Payment was easy and activation was instant. Channels are complete.”
+      </p>
+      <span class="review-name">— Somchai K.</span>
     </div>
 
     <div class="review-card">
-      <img src="https://flagcdn.com/16x12/my.png">
-      <p>"No buffering, clear HD channels. Trusted seller."</p>
-      <span>— Daniel (Singapore)</span>
+      <p class="review-text">
+        “Works perfectly on Android TV. Worth every ringgit.”
+      </p>
+      <span class="review-name">— Daniel L.</span>
     </div>
 
     <div class="review-card">
-      <img src="https://flagcdn.com/16x12/my.png.png">
-      <p>"Admin fast reply, activation cepat. Recommended!"</p>
-      <span>— Aiman (Malaysia)</span>
+      <p class="review-text">
+        “Customer service replies fast and helps until solved.”
+      </p>
+      <span class="review-name">— Ahmad R.</span>
     </div>
 
     <div class="review-card">
-      <img src="https://flagcdn.com/16x12/my.png">
-      <p>"Channel lengkap, harga murah. Mantap 🔥"</p>
-      <span>— Rizky (Indonesia)</span>
+      <p class="review-text">
+        “Smooth streaming, no buffering during live sports.”
+      </p>
+      <span class="review-name">— Rizky A.</span>
     </div>
-  </div>
-</section>
 
-<!-- ================= TRUSTED ================= -->
-<section class="trusted">
-  <h2>🔒 100% Trusted & Authorized Reseller</h2>
-  <div class="https://flagcdn.com/16x12/my.png">
-    <img src="https://flagcdn.com/16x12/my.png">
-    <img src="https://flagcdn.com/16x12/my.png">
-    <img src="https://flagcdn.com/16x12/my.png">
-    <img src="https://flagcdn.com/16x12/my.png">
   </div>
 </section>
 
@@ -120,7 +124,9 @@
 <section class="reseller">
   <h2>🤝 Become a Reseller</h2>
   <p>Earn income by selling our IPTV</p>
-  <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller" class="btn" target="_blank">
+  <a href="https://wa.me/60179290815?text=Hi%20I%20want%20to%20be%20a%20reseller"
+     class="btn"
+     target="_blank">
     💼 I Want to Be a Reseller
   </a>
 </section>
@@ -210,27 +216,27 @@ const prices = {
 };
 
 function openPackage(app, appName) {
-  localStorage.setItem("paidApp", appName);
   document.getElementById("packageModal").style.display = "flex";
   document.getElementById("appTitle").innerText = appName + " Packages";
+
   const list = document.getElementById("priceList");
   list.innerHTML = "";
+
   prices[app].forEach(pkg => {
+    const link = paymentLinks[app][pkg.name];
     list.innerHTML += `
-      <li>${pkg.name} — <strong>${pkg.price}</strong>
-      <button class="btn small" onclick="payNow('${paymentLinks[app][pkg.name]}','${pkg.name}')">Pay Now</button>
+      <li>
+        ${pkg.name} — <strong>${pkg.price}</strong>
+        <button class="btn small" onclick="window.location.href='${link}'">
+          Pay Now
+        </button>
       </li>`;
   });
 }
 
-function payNow(link, pkg) {
-  localStorage.setItem("paidPackage", pkg);
-  window.location.href = link;
-}
-
-function closePackage(){document.getElementById("packageModal").style.display="none";}
-function openQR(){document.getElementById("qrModal").style.display="flex";}
-function closeQR(){document.getElementById("qrModal").style.display="none";}
+function closePackage(){ document.getElementById("packageModal").style.display="none"; }
+function openQR(){ document.getElementById("qrModal").style.display="flex"; }
+function closeQR(){ document.getElementById("qrModal").style.display="none"; }
 </script>
 
 </body>
